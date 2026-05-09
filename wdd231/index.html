@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WDD231 - Home</title>
+
+    <meta name="description" content="WDD231 Course Home Page">
+    <meta name="author" content="Eyuro Ben Jnr">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/dates.js" defer></script>
+    <script src="scripts/courses.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="images/logo.svg" alt="Site Logo" width="50">
+        <span>Eyuro Ben Jnr</span>
+    </div>
+
+    <button id="menu"></button>
+
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="chamber/index.html">Chamber</a>
+        <a href="#">Final</a>
+    </nav>
+</header>
+
+<main>
+    <h1>Home</h1>
+
+    <section>
+        <h2>About Me</h2>
+        <p>I am studying Software Development through BYU Pathway.</p>
+    </section>
+
+    <section>
+        <h2>Student Photo</h2>
+        <img src="images/profile.webp" alt="Profile Photo">
+    </section>
+
+    <section>
+        <h2>Web and Computer Programming Certificate</h2>
+
+        <div class="buttons">
+            <button id="all">All Courses</button>
+            <button id="wdd">WDD Courses</button>
+            <button id="cse">CSE Courses</button>
+        </div>
+
+        <div id="courses"></div>
+
+        <p>Total Credits: <span id="credits"></span></p>
+    </section>
+</main>
+
+<footer>
+    <div class="social">
+        <a href="https://github.com/AeuroShaw">GitHub</a>
+        <a href="www.linkedin.com/in/foluso-eyuro-00ba69112"></a>
+    </div>
+
+    <p>
+        &copy;<span id="currentyear"></span>
+        Eyuro Ben Jnr - Nigeria
+    </p>
+
+    <p id="lastModified"></p>
+</footer>
+
+</body>
+</html>
