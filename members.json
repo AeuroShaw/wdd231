@@ -1,0 +1,23 @@
+{
+  "familyName": "Johnson",
+  "moveInDate": "2025-03-15",
+  "visitedByBishopric": true,
+  "familyMembers": [
+    {
+      "name": "Michael Johnson",
+      "gender": "Male",
+      "birthdate": "1985-06-21"
+    },
+    {
+      "name": "Sarah Johnson",
+      "gender": "Female",
+      "birthdate": "1988-11-10"
+    },
+    {
+      "name": "Emma Johnson",
+      "gender": "Female",
+      "birthdate": "2014-04-03"
+    }
+  ],
+  "numberOfPeople": 3
+}
