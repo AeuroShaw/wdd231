@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" rx="16" fill="#E8F5F0"/>
+  <!-- Heart shape -->
+  <path d="M100,155 C60,125 25,105 25,72 C25,50 42,35 62,35 C78,35 90,44 100,58 C110,44 122,35 138,35 C158,35 175,50 175,72 C175,105 140,125 100,155 Z" fill="#C0392B" opacity="0.12"/>
+  <!-- Cross symbol -->
+  <rect x="82" y="55" width="36" height="100" rx="10" fill="#1A8A5A"/>
+  <rect x="45" y="82" width="110" height="36" rx="10" fill="#1A8A5A"/>
+  <!-- Inner white cross highlight -->
+  <rect x="86" y="59"  width="28" height="92"  rx="8" fill="#2ECC8A" opacity="0.35"/>
+  <rect x="49" y="86"  width="102" height="28" rx="8" fill="#2ECC8A" opacity="0.35"/>
+  <!-- Center dot -->
+  <circle cx="100" cy="100" r="14" fill="#FAF7F2"/>
+  <text x="100" y="105" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="700" fill="#1A8A5A">A</text>
+  <!-- Leaf accents -->
+  <ellipse cx="50"  cy="148" rx="14" ry="22" fill="#1A8A5A" opacity="0.18" transform="rotate(-35 50 148)"/>
+  <ellipse cx="150" cy="148" rx="14" ry="22" fill="#1A8A5A" opacity="0.18" transform="rotate(35 150 148)"/>
+  <!-- Text -->
+  <text x="100" y="186" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="700" fill="#1A8A5A" letter-spacing="0.4">AGODI HEALTHCARE</text>
+</svg>

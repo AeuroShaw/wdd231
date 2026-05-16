@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" rx="16" fill="#3B2005"/>
+  <!-- Cocoa House skyscraper silhouette -->
+  <rect x="70" y="50" width="60" height="115" rx="3" fill="#8B5E1A"/>
+  <!-- Building windows grid -->
+  <rect x="79" y="62" width="12" height="10" rx="1" fill="#FAF7F2" opacity="0.7"/>
+  <rect x="97" y="62" width="12" height="10" rx="1" fill="#FAF7F2" opacity="0.7"/>
+  <rect x="115" y="62" width="8"  height="10" rx="1" fill="#FAF7F2" opacity="0.7"/>
+  <rect x="79" y="80" width="12" height="10" rx="1" fill="#FAF7F2" opacity="0.7"/>
+  <rect x="97" y="80" width="12" height="10" rx="1" fill="#FAF7F2" opacity="0.7"/>
+  <rect x="115" y="80" width="8"  height="10" rx="1" fill="#FAF7F2" opacity="0.7"/>
+  <rect x="79" y="98" width="12" height="10" rx="1" fill="#FAF7F2" opacity="0.7"/>
+  <rect x="97" y="98" width="12" height="10" rx="1" fill="#FAF7F2" opacity="0.7"/>
+  <rect x="115" y="98" width="8"  height="10" rx="1" fill="#FAF7F2" opacity="0.7"/>
+  <rect x="79" y="116" width="12" height="10" rx="1" fill="#FAF7F2" opacity="0.7"/>
+  <rect x="97" y="116" width="12" height="10" rx="1" fill="#FAF7F2" opacity="0.7"/>
+  <rect x="115" y="116" width="8"  height="10" rx="1" fill="#FAF7F2" opacity="0.7"/>
+  <!-- Cocoa pod icon top left -->
+  <ellipse cx="46" cy="70" rx="18" ry="28" fill="#D4A017" transform="rotate(-20 46 70)"/>
+  <line x1="36" y1="55" x2="56" y2="87" stroke="#3B2005" stroke-width="2.5" opacity="0.5"/>
+  <line x1="42" y1="50" x2="52" y2="90" stroke="#3B2005" stroke-width="2.5" opacity="0.5"/>
+  <line x1="48" y1="48" x2="48" y2="92" stroke="#3B2005" stroke-width="2.5" opacity="0.5"/>
+  <!-- Text -->
+  <text x="100" y="182" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" font-weight="700" fill="#D4A017" letter-spacing="0.5">COCOA HOUSE</text>
+</svg>

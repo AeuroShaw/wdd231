@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" rx="16" fill="#0D1F35"/>
+  <!-- Circuit board base -->
+  <rect x="35" y="55" width="130" height="95" rx="10" fill="#112B47" stroke="#1E5799" stroke-width="1.5"/>
+  <!-- Circuit traces -->
+  <line x1="60"  y1="55"  x2="60"  y2="35"  stroke="#00C8FF" stroke-width="1.5" opacity="0.6"/>
+  <line x1="100" y1="55"  x2="100" y2="35"  stroke="#00C8FF" stroke-width="1.5" opacity="0.6"/>
+  <line x1="140" y1="55"  x2="140" y2="35"  stroke="#00C8FF" stroke-width="1.5" opacity="0.6"/>
+  <line x1="60"  y1="150" x2="60"  y2="170" stroke="#00C8FF" stroke-width="1.5" opacity="0.6"/>
+  <line x1="100" y1="150" x2="100" y2="170" stroke="#00C8FF" stroke-width="1.5" opacity="0.6"/>
+  <line x1="140" y1="150" x2="140" y2="170" stroke="#00C8FF" stroke-width="1.5" opacity="0.6"/>
+  <!-- Horizontal traces -->
+  <line x1="35"  y1="80"  x2="15"  y2="80"  stroke="#00C8FF" stroke-width="1.5" opacity="0.6"/>
+  <line x1="35"  y1="120" x2="15"  y2="120" stroke="#00C8FF" stroke-width="1.5" opacity="0.6"/>
+  <line x1="165" y1="80"  x2="185" y2="80"  stroke="#00C8FF" stroke-width="1.5" opacity="0.6"/>
+  <line x1="165" y1="120" x2="185" y2="120" stroke="#00C8FF" stroke-width="1.5" opacity="0.6"/>
+  <!-- Chip in center -->
+  <rect x="70" y="75" width="60" height="55" rx="6" fill="#1A3A5C" stroke="#00C8FF" stroke-width="1.5"/>
+  <!-- Chip pins -->
+  <rect x="76" y="70" width="6" height="5" rx="1" fill="#00C8FF" opacity="0.8"/>
+  <rect x="90" y="70" width="6" height="5" rx="1" fill="#00C8FF" opacity="0.8"/>
+  <rect x="104" y="70" width="6" height="5" rx="1" fill="#00C8FF" opacity="0.8"/>
+  <rect x="118" y="70" width="6" height="5" rx="1" fill="#00C8FF" opacity="0.8"/>
+  <rect x="76" y="130" width="6" height="5" rx="1" fill="#00C8FF" opacity="0.8"/>
+  <rect x="90" y="130" width="6" height="5" rx="1" fill="#00C8FF" opacity="0.8"/>
+  <rect x="104" y="130" width="6" height="5" rx="1" fill="#00C8FF" opacity="0.8"/>
+  <rect x="118" y="130" width="6" height="5" rx="1" fill="#00C8FF" opacity="0.8"/>
+  <!-- ITH text on chip -->
+  <text x="100" y="107" text-anchor="middle" font-family="monospace" font-size="16" font-weight="700" fill="#00C8FF">ITH</text>
+  <!-- Dot nodes -->
+  <circle cx="60"  cy="35"  r="3.5" fill="#D4A017"/>
+  <circle cx="100" cy="35"  r="3.5" fill="#D4A017"/>
+  <circle cx="140" cy="35"  r="3.5" fill="#D4A017"/>
+  <circle cx="60"  cy="170" r="3.5" fill="#D4A017"/>
+  <circle cx="100" cy="170" r="3.5" fill="#D4A017"/>
+  <circle cx="140" cy="170" r="3.5" fill="#D4A017"/>
+</svg>

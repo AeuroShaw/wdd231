@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Dugbe Market Traders Association",
+    "tagline": "The Heart of Ibadan Commerce",
+    "address": "Dugbe Market Road, Ibadan, Oyo State",
+    "phone": "+234 803 123 4567",
+    "website": "https://dugbemarket.ng",
+    "image": "dugbe.png",
+    "membershipLevel": 3,
+    "email": "info@dugbemarket.ng",
+    "category": "Retail & Trade"
+  },
+  {
+    "name": "Cocoa House Holdings Ltd",
+    "tagline": "Legacy of Agricultural Excellence",
+    "address": "2 Awolowo Ave, Ibadan, Oyo State",
+    "phone": "+234 802 987 6543",
+    "website": "https://cocoahouse.ng",
+    "image": "cocoa.png",
+    "membershipLevel": 3,
+    "email": "contact@cocoahouse.ng",
+    "category": "Agriculture & Export"
+  },
+  {
+    "name": "Premier Hotel Ibadan",
+    "tagline": "First Class Hospitality Since 1963",
+    "address": "Mokola Hill, Ibadan, Oyo State",
+    "phone": "+234 805 246 8101",
+    "website": "https://premierhotelibadan.com",
+    "image": "premier.png",
+    "membershipLevel": 3,
+    "email": "reservations@premierhotelibadan.com",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "name": "Ibadan Tech Hub",
+    "tagline": "Powering Nigeria's Tech Ecosystem",
+    "address": "Ring Road, Ibadan, Oyo State",
+    "phone": "+234 901 357 2468",
+    "website": "https://ibadantechhub.ng",
+    "image": "techhub.png",
+    "membershipLevel": 2,
+    "email": "hello@ibadantechhub.ng",
+    "category": "Technology & Innovation"
+  },
+  {
+    "name": "Oluyole Industrial Estate Cooperative",
+    "tagline": "Manufacturing the Future",
+    "address": "Oluyole Estate, Ibadan, Oyo State",
+    "phone": "+234 806 135 7924",
+    "website": "https://oluyolecoop.ng",
+    "image": "oluyole.png",
+    "membershipLevel": 2,
+    "email": "admin@oluyolecoop.ng",
+    "category": "Manufacturing & Industry"
+  },
+  {
+    "name": "Agodi Healthcare Consortium",
+    "tagline": "Wellness for Every Ibadan Resident",
+    "address": "Agodi GRA, Ibadan, Oyo State",
+    "phone": "+234 808 531 9753",
+    "website": "https://agodihealth.ng",
+    "image": "agodi.png",
+    "membershipLevel": 2,
+    "email": "care@agodihealth.ng",
+    "category": "Healthcare & Wellness"
+  },
+  {
+    "name": "Bodija Organic Farmers Cooperative",
+    "tagline": "Fresh from Farm to Table",
+    "address": "Bodija Market, Ibadan, Oyo State",
+    "phone": "+234 703 864 2097",
+    "website": "https://bodijafarmers.ng",
+    "image": "bodija.png",
+    "membershipLevel": 1,
+    "email": "info@bodijafarmers.ng",
+    "category": "Agriculture & Food"
+  },
+  {
+    "name": "Ibadan Creative Arts Foundation",
+    "tagline": "Celebrating Yoruba Culture & Heritage",
+    "address": "Cultural Centre, Mokola, Ibadan",
+    "phone": "+234 704 719 3850",
+    "website": "https://ibadanarts.ng",
+    "image": "arts.png",
+    "membershipLevel": 1,
+    "email": "info@ibadanarts.ng",
+    "category": "Arts & Culture"
+  }
+]

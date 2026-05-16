@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Member Directory | Ibadan Chamber of Commerce</title>
+  <meta name="description" content="Browse the full directory of businesses and organizations that are proud members of the Ibadan Chamber of Commerce, Oyo State, Nigeria." />
+  <meta name="author" content="WDD 231 Student" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Member Directory | Ibadan Chamber of Commerce" />
+  <meta property="og:description" content="Find local businesses, services, and community organizations that are members of the Ibadan Chamber of Commerce." />
+  <meta property="og:image"       content="images/og-directory.jpg" />
+  <meta property="og:url"         content="https://yourusername.github.io/wdd231/chamber/directory.html" />
+
+  <!-- Favicon (inline SVG as data URI) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%238B1A1A'/><text y='.9em' font-size='65' x='50%' text-anchor='middle' dy='0.1em' font-family='Georgia,serif' fill='%23D4A017'>I</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS: normalize → small → larger -->
+  <link rel="stylesheet" href="css/small.css" />
+  <link rel="stylesheet" href="css/larger.css" />
+
+  <!-- Google Analytics placeholder -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <a href="index.html" class="header-brand" aria-label="Ibadan Chamber of Commerce Home">
+      <div class="header-logo" aria-hidden="true">I</div>
+      <div class="header-title">
+        Ibadan Chamber of Commerce
+        <span>Oyo State, Nigeria</span>
+      </div>
+    </a>
+
+    <button id="menu-toggle" aria-controls="nav-list" aria-expanded="false" aria-label="Toggle navigation">
+      ☰
+    </button>
+
+    <nav aria-label="Main navigation">
+      <ul id="nav-list" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html" class="active" aria-current="page">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li>
+          <button id="theme-btn" class="theme-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
+            ◑
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Adire-pattern decorative strip -->
+  <div class="adire-strip" aria-hidden="true"></div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" aria-labelledby="page-heading">
+    <div class="hero-inner">
+      <h1 id="page-heading">Business <span>Directory</span></h1>
+      <p>Discover the thriving businesses and organisations that power Ibadan's economy and community.</p>
+    </div>
+  </section>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main>
+
+    <!-- Controls bar -->
+    <div class="directory-controls">
+      <h2>Our Members</h2>
+      <span class="member-count" id="member-count" aria-live="polite">Loading…</span>
+      <div class="view-btns" role="group" aria-label="Directory view toggle">
+        <button class="view-btn active" id="btn-grid" aria-label="Grid view" title="Grid view">⊞</button>
+        <button class="view-btn"        id="btn-list" aria-label="List view"  title="List view">☰</button>
+      </div>
+    </div>
+
+    <!-- Members render target -->
+    <section id="members-container" class="grid-view" aria-label="Member directory">
+      <!-- Populated by directory.js -->
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="adire-strip" aria-hidden="true"></div>
+  <footer>
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <strong>Ibadan Chamber of Commerce</strong>
+        <p>
+          Dugbe, Ibadan<br />
+          Oyo State, Nigeria 200001<br />
+          info@ibadanchamber.ng<br />
+          +234 803 000 0000
+        </p>
+      </div>
+
+      <div>
+        <p style="font-size:0.85rem;margin-bottom:0.75rem;opacity:0.8;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">Follow Us</p>
+        <div class="footer-social">
+          <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">▶</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter / X">𝕏</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+
+      <div class="footer-dev">
+        <strong>WDD 231 Class Project</strong><br />
+        Your Name Here<br />
+        &copy; <span id="copyright-year"></span> Ibadan Chamber of Commerce<br />
+        Last Modified: <span id="last-modified"></span>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      Built with semantic HTML, vanilla CSS &amp; JavaScript &mdash; WDD 231
+    </div>
+  </footer>
+
+  <script src="js/directory.js" defer></script>
+</body>
+</html>
