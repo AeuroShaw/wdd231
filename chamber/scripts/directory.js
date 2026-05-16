@@ -1,6 +1,3 @@
-// === IBADAN CHAMBER OF COMMERCE — Directory JS ===
-
-// --- Dark Mode ---
 const themeBtn = document.getElementById('theme-btn');
 const body = document.body;
 
@@ -12,7 +9,6 @@ themeBtn?.addEventListener('click', () => {
   localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
 });
 
-// --- Mobile Nav ---
 const menuToggle = document.getElementById('menu-toggle');
 const navList = document.getElementById('nav-list');
 
@@ -21,14 +17,12 @@ menuToggle?.addEventListener('click', () => {
   menuToggle.setAttribute('aria-expanded', navList.classList.contains('open'));
 });
 
-// --- Footer: copyright year & last modified ---
 const yearEl = document.getElementById('copyright-year');
 const modEl = document.getElementById('last-modified');
 
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 if (modEl) modEl.textContent = document.lastModified;
 
-// --- View toggle ---
 const container = document.getElementById('members-container');
 const gridBtn = document.getElementById('btn-grid');
 const listBtn = document.getElementById('btn-list');
@@ -48,7 +42,6 @@ function setView(view) {
 gridBtn?.addEventListener('click', () => setView('grid'));
 listBtn?.addEventListener('click', () => setView('list'));
 
-// --- Membership badge label ---
 function badgeLabel(level) {
   switch (level) {
     case 3: return { cls: 'badge-3', text: '★ Gold Member' };
@@ -57,12 +50,10 @@ function badgeLabel(level) {
   }
 }
 
-// --- Initials from name ---
 function initials(name) {
   return name.split(' ').slice(0, 2).map(w => w[0]).join('').toUpperCase();
 }
 
-// --- Card HTML ---
 function buildCard(m) {
   const badge = badgeLabel(m.membershipLevel);
   return `
@@ -87,7 +78,6 @@ function buildCard(m) {
     </article>`;
 }
 
-// --- List Item HTML ---
 function buildListItem(m) {
   const badge = badgeLabel(m.membershipLevel);
   return `
@@ -103,7 +93,6 @@ function buildListItem(m) {
     </div>`;
 }
 
-// --- Render ---
 function renderMembers(members) {
   const html = members.map(m =>
     currentView === 'grid' ? buildCard(m) : buildListItem(m)
@@ -114,7 +103,6 @@ function renderMembers(members) {
   if (countEl) countEl.textContent = `${members.length} members`;
 }
 
-// --- Fetch ---
 async function loadMembers() {
   container.innerHTML = `
     <div class="loading" style="grid-column:1/-1">
@@ -133,5 +121,4 @@ async function loadMembers() {
   }
 }
 
-// --- Init ---
 loadMembers();
