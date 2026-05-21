@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modules Example: Course and Sections</title>
+  <link rel="stylesheet" href="styles/modules.css" />
+</head>
+<body>
+
+  <header>
+    <h1 id="courseTitle">Loading...</h1>
+  </header>
+
+  <main>
+    <div class="controls">
+      <label for="sectionNumber">Choose a section:</label>
+      <select id="sectionNumber"></select>
+      <button id="enrollStudent">Enroll a Student</button>
+      <button id="dropStudent">Drop a Student</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Section</th>
+          <th>Enrolled</th>
+          <th>Instructor</th>
+        </tr>
+      </thead>
+      <tbody id="sectionList"></tbody>
+    </table>
+  </main>
+
+  <script type="module" src="scripts/modules.mjs"></script>
+</body>
+</html>
