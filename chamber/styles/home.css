@@ -48,7 +48,7 @@
 
 .cta-btn {
   display: inline-block;
-  background: var(--gold);
+  background: #7a4f00;   /* dark amber – white text = 7.2:1 contrast ✅ */
   color: #fff;
   padding: .7rem 1.5rem;
   border-radius: var(--radius);
@@ -56,10 +56,10 @@
   font-size: .9rem;
   text-decoration: none;
   letter-spacing: .04em;
-  box-shadow: 0 4px 14px rgba(200,134,10,.45);
+  box-shadow: 0 4px 14px rgba(122,79,0,.5);
   transition: background .2s, transform .15s;
 }
-.cta-btn:hover { background: var(--gold-light); transform: translateY(-2px); text-decoration: none; }
+.cta-btn:hover { background: #5c3b00; transform: translateY(-2px); text-decoration: none; }
 
 /* ── HOME SECTION WRAPPER ────────────────────────── */
 .home-section {
@@ -194,10 +194,12 @@
 
 /* ── MAIN GRID (mobile first = single col) ──────── */
 main {
+  flex: 1;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
   padding: 1rem;
+  width: 100%;
 }
 
 /* ── RESPONSIVE ──────────────────────────────────── */

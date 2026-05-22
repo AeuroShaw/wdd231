@@ -144,7 +144,7 @@ function renderForecastPlaceholder() {
 async function loadSpotlights() {
   if (!spotlightsBody) return;
   try {
-    const res  = await fetch('./members.json');
+    const res  = await fetch('./scripts/members.json');
     if (!res.ok) throw new Error(res.status);
     const data = await res.json();
     const eligible = data.members.filter(m => m.membership === 'gold' || m.membership === 'silver');

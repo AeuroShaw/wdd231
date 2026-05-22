@@ -45,8 +45,8 @@
   }
 
   #nav-list li a.active {
-    color: var(--gold-light);
-    background: rgba(200,134,10,.15);
+    color: #fff;
+    background: rgba(200,134,10,.35);
   }
 
   .hero { padding: 3rem 2rem 3.5rem; }

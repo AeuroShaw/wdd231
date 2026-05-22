@@ -4,7 +4,6 @@
    Palette: Forest Green + Ochre Gold + Warm Cream
    ===================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lato:wght@400;600;700&display=swap');
 
 /* ── TOKENS ──────────────────────────────────────── */
 :root {
@@ -178,8 +177,8 @@ nav.open { transform: translateY(0); }
 }
 
 #nav-list li a:hover,
-#nav-list li .theme-btn:hover { color: var(--gold-light); background: rgba(200,134,10,.1); }
-#nav-list li a.active { color: var(--gold-light); border-left: 3px solid var(--gold); padding-left: calc(1.4rem - 3px); }
+#nav-list li .theme-btn:hover { color: #fff; background: rgba(200,134,10,.28); }
+#nav-list li a.active { color: #fff; background: rgba(200,134,10,.32); border-left: 3px solid var(--gold-light); padding-left: calc(1.4rem - 3px); }
 
 /* ── ADIRE STRIP ─────────────────────────────────── */
 .adire-strip {
@@ -248,6 +247,7 @@ nav.open { transform: translateY(0); }
 main {
   flex: 1;
   padding: 1.4rem 1rem 2rem;
+  width: 100%;
 }
 
 /* ── DIRECTORY CONTROLS ──────────────────────────── */
@@ -523,11 +523,21 @@ footer {
   gap: .6rem;
 }
 
+/* label above social icons - replaces inline style */
+.footer-social-label {
+  font-size: .85rem;
+  margin-bottom: .75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #b8d4c2;
+}
+
 .footer-social a {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(255,255,255,.1);
+  background: var(--green-light);  /* solid bg = passes contrast */
   color: #fff;
   display: flex;
   align-items: center;

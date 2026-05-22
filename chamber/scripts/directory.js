@@ -200,7 +200,7 @@ async function loadDirectory() {
     </div>`;
 
   try {
-    const res  = await fetch('./members.json');
+    const res  = await fetch('./scripts/members.json');
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
 
