@@ -1,0 +1,70 @@
+{
+  "members": [
+    {
+      "id": 1,
+      "name": "Bodija Market Ventures",
+      "tagline": "Fresh Produce & Agricultural Supplies",
+      "phone": "0803-555-1001",
+      "address": "14 Bodija Market Rd, Ibadan",
+      "website": "bodija-ventures.ng",
+      "membership": "gold",
+      "initial": "BM",
+      "color": "#1a3a2a"
+    },
+    {
+      "id": 2,
+      "name": "Oyo State Export Hub",
+      "tagline": "Connecting Businesses to Global Markets",
+      "phone": "0802-555-2002",
+      "address": "3 Ring Road, Ibadan",
+      "website": "oyoexports.ng",
+      "membership": "gold",
+      "initial": "OE",
+      "color": "#2a5040"
+    },
+    {
+      "id": 3,
+      "name": "Ibadan Tech Collective",
+      "tagline": "Innovation & Software Development",
+      "phone": "0901-555-3003",
+      "address": "22 UI Road, Ibadan",
+      "website": "ibadantech.ng",
+      "membership": "silver",
+      "initial": "IT",
+      "color": "#3a5a6a"
+    },
+    {
+      "id": 4,
+      "name": "Premier Hospitality Group",
+      "tagline": "Hotels, Events & Catering Services",
+      "phone": "0705-555-4004",
+      "address": "5 Agodi GRA, Ibadan",
+      "website": "premierhospitality.ng",
+      "membership": "gold",
+      "initial": "PH",
+      "color": "#6a3010"
+    },
+    {
+      "id": 5,
+      "name": "Dugbe Fabrics & Fashion",
+      "tagline": "Quality Textiles, Aso-oke & Adire",
+      "phone": "0803-555-5005",
+      "address": "Dugbe Market, Ibadan",
+      "website": "dugbefashion.ng",
+      "membership": "silver",
+      "initial": "DF",
+      "color": "#5a1a4a"
+    },
+    {
+      "id": 6,
+      "name": "Ibadan Properties Ltd",
+      "tagline": "Real Estate & Land Development",
+      "phone": "0802-555-6006",
+      "address": "Oluyole Estate, Ibadan",
+      "website": "ibadanprops.ng",
+      "membership": "gold",
+      "initial": "IP",
+      "color": "#1a2a5a"
+    }
+  ]
+}

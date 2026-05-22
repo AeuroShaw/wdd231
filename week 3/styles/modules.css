@@ -42,7 +42,6 @@ main {
   padding: 0 1.5rem;
 }
 
-/* Controls */
 .controls {
   display: flex;
   align-items: center;
@@ -102,7 +101,6 @@ button:active { transform: scale(0.97); }
 }
 #dropStudent:hover { background-color: #fde8e4; border-color: var(--danger); }
 
-/* Table */
 table {
   width: 100%;
   border-collapse: collapse;
