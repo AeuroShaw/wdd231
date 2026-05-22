@@ -161,7 +161,7 @@ function renderForecastPlaceholder() {
 // ── SPOTLIGHTS ───────────────────────────────────────────────
 async function loadSpotlights() {
   try {
-    const res     = await fetch('./scripts/members.json');
+    const res     = await fetch('./members.json');
     const data    = await res.json();
 
     // Filter gold + silver only

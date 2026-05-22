@@ -65,6 +65,72 @@
       "membership": "gold",
       "initial": "IP",
       "color": "#1a2a5a"
+    },
+    {
+      "id": 7,
+      "name": "Mapo Heritage Trust",
+      "tagline": "Cultural Tourism & Community Development",
+      "phone": "0805-555-7007",
+      "address": "Mapo Hill, Ibadan",
+      "website": "mapoheritage.ng",
+      "membership": "nonprofit",
+      "initial": "MH",
+      "color": "#6a4a10"
+    },
+    {
+      "id": 8,
+      "name": "Challenge Market Co-op",
+      "tagline": "Wholesale & Retail Trade Association",
+      "phone": "0806-555-8008",
+      "address": "Challenge Market, Ibadan",
+      "website": "challengecoop.ng",
+      "membership": "silver",
+      "initial": "CM",
+      "color": "#3a2a6a"
+    },
+    {
+      "id": 9,
+      "name": "Ibadan Solar & Power",
+      "tagline": "Renewable Energy Solutions for Businesses",
+      "phone": "0703-555-9009",
+      "address": "Trans-Ekulu, Ibadan",
+      "website": "ibadansolar.ng",
+      "membership": "gold",
+      "initial": "IS",
+      "color": "#5a4a00"
+    },
+    {
+      "id": 10,
+      "name": "UI Alumni Enterprises",
+      "tagline": "Graduate Business Incubator Network",
+      "phone": "0801-555-0010",
+      "address": "University of Ibadan, Ibadan",
+      "website": "uialumni.ng",
+      "membership": "nonprofit",
+      "initial": "UA",
+      "color": "#1a3a5a"
+    },
+    {
+      "id": 11,
+      "name": "Adamasingba Sports Hub",
+      "tagline": "Sports Facilities, Fitness & Wellness",
+      "phone": "0902-555-1011",
+      "address": "Adamasingba Stadium, Ibadan",
+      "website": "adamasingba.ng",
+      "membership": "silver",
+      "initial": "AS",
+      "color": "#2a1a5a"
+    },
+    {
+      "id": 12,
+      "name": "Cocoa House Offices",
+      "tagline": "Premium Commercial Office & Co-working Spaces",
+      "phone": "0807-555-1212",
+      "address": "Cocoa House, Dugbe, Ibadan",
+      "website": "cocoahouseoffices.ng",
+      "membership": "gold",
+      "initial": "CH",
+      "color": "#4a2a0a"
     }
   ]
 }

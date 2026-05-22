@@ -1,0 +1,161 @@
+/* =====================================================
+   Ibadan Chamber – larger.css  (tablet + desktop)
+   Layered on top of small.css via separate <link>
+   ===================================================== */
+
+/* ── TABLET (≥ 600px) ─────────────────────────────── */
+@media (min-width: 600px) {
+
+  header {
+    padding: 0 1.5rem;
+  }
+
+  .header-title { font-size: .95rem; }
+
+  /* show nav inline on larger screens */
+  #menu-toggle { display: none; }
+
+  nav {
+    position: static;
+    transform: none !important;
+    background: transparent;
+    box-shadow: none;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  #nav-list {
+    display: flex !important;
+    align-items: center;
+    padding: 0;
+    gap: .1rem;
+  }
+
+  #nav-list li a,
+  #nav-list li .theme-btn {
+    display: inline-block;
+    padding: .42rem .9rem;
+    font-size: .85rem;
+    border-radius: var(--radius-sm);
+    color: #c8e0d0;
+    border-left: none !important;
+    padding-left: .9rem !important;
+  }
+
+  #nav-list li a.active {
+    color: var(--gold-light);
+    background: rgba(200,134,10,.15);
+  }
+
+  .hero { padding: 3rem 2rem 3.5rem; }
+  .hero-inner h1 { font-size: 2.6rem; }
+
+  main { padding: 1.8rem 1.5rem 2.5rem; }
+
+  /* 2-column grid */
+  #members-container.grid-view {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.1rem;
+  }
+
+  .footer-inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem 2rem 1.4rem;
+    align-items: flex-start;
+  }
+
+  .footer-brand { flex: 1 1 200px; }
+  .footer-dev   { flex: 1 1 180px; text-align: right; }
+}
+
+/* ── DESKTOP (≥ 900px) ────────────────────────────── */
+@media (min-width: 900px) {
+
+  header { padding: 0 2.5rem; }
+
+  .header-logo { width: 44px; height: 44px; font-size: 1.5rem; }
+  .header-title { font-size: 1rem; }
+
+  #nav-list li a,
+  #nav-list li .theme-btn { font-size: .9rem; padding: .5rem 1.1rem; }
+
+  .hero { padding: 4rem 3rem 4.5rem; }
+  .hero-inner h1 { font-size: 3.2rem; }
+  .hero-inner p  { font-size: 1rem; }
+
+  main {
+    padding: 2rem 2.5rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .directory-controls { margin-bottom: 1.6rem; }
+  .directory-controls h2 { font-size: 1.4rem; }
+
+  /* 3-column grid */
+  #members-container.grid-view {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.3rem;
+  }
+
+  /* larger logo in grid */
+  .card-logo { width: 90px; height: 90px; font-size: 2.2rem; }
+
+  /* list view: show more detail columns */
+  #members-container.list-view .member-card {
+    padding: .8rem 1.4rem;
+  }
+
+  #members-container.list-view .card-detail.hide-list {
+    display: flex; /* show address/phone on desktop list */
+  }
+
+  .footer-inner { padding: 2.5rem 2.5rem 1.8rem; }
+  .footer-bottom { padding: .8rem 2.5rem; }
+}
+
+/* ── WIDE DESKTOP (≥ 1200px) ─────────────────────── */
+@media (min-width: 1200px) {
+
+  #members-container.grid-view {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  main {
+    padding: 2rem 3rem 3.5rem;
+  }
+}
+
+/* ── PRINT ───────────────────────────────────────── */
+@media print {
+  header, .adire-strip, .directory-controls .view-btns,
+  #menu-toggle, nav, .hero, footer { display: none !important; }
+
+  main { padding: 0; }
+
+  #members-container.grid-view,
+  #members-container.list-view {
+    display: block;
+    columns: 2;
+    column-gap: 1.5rem;
+  }
+
+  .member-card {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    animation: none;
+  }
+}
+
+/* ── REDUCED MOTION ───────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .member-card { animation: none; }
+  * { transition: none !important; }
+}
