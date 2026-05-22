@@ -25,6 +25,10 @@ const lastModified = document.getElementById('last-modified');
 if (copyrightYr)  copyrightYr.textContent  = new Date().getFullYear();
 if (lastModified) lastModified.textContent = document.lastModified;
 
+// Also sync theme on page load (shared with main.js)
+const _savedTheme = localStorage.getItem('ibadanTheme');
+if (_savedTheme) document.documentElement.setAttribute('data-theme', _savedTheme);
+
 // ── DARK MODE ─────────────────────────────────────────────────
 function applyTheme(dark) {
   document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');

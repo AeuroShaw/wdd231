@@ -4,38 +4,78 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Discover Ibadan | Ibadan Chamber of Commerce</title>
-  <link rel="stylesheet" href="styles/styles.css" />
+  <meta name="description" content="Explore Ibadan's rich history, demographics, landmarks, and what makes it the heartbeat of Oyo State." />
+  <meta name="author" content="WDD 231 Student" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%230f2e1a'/><text y='.88em' font-size='62' x='50%' text-anchor='middle' font-family='Georgia,serif' fill='%23c8860a'>I</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles/small.css" />
+  <link rel="stylesheet" href="styles/larger.css" />
 </head>
 <body>
+
   <header>
-    <div class="logo-wrap">
-      <div class="logo-img" aria-hidden="true">🏛️</div>
-      <div class="logo-text">
-        <h1>Ibadan Chamber<br>of Commerce</h1>
+    <a href="index.html" class="header-brand" aria-label="Ibadan Chamber of Commerce Home">
+      <div class="header-logo" aria-hidden="true">I</div>
+      <div class="header-title">
+        Ibadan Chamber of Commerce
         <span>Oyo State, Nigeria</span>
       </div>
-    </div>
-    <div class="header-controls">
-      <button class="menu-btn" aria-label="Toggle navigation">☰</button>
-    </div>
+    </a>
+    <button id="menu-toggle" aria-controls="nav-list" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+    <nav aria-label="Main navigation">
+      <ul id="nav-list" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="discover.html" class="active" aria-current="page">Discover</a></li>
+        <li><button class="theme-btn" aria-label="Toggle dark mode" title="Toggle dark mode">◑</button></li>
+      </ul>
+    </nav>
   </header>
-  <nav aria-label="Main navigation">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="discover.html" class="active">Directory</a></li>
-      <li><a href="discover.html">Discover</a></li>
-      <li><a href="join.html">Join</a></li>
-    </ul>
-  </nav>
-  <main style="padding:2rem 1.2rem; max-width:900px; margin:0 auto;">
-    <h2 style="font-family:'Playfair Display',serif; color:var(--primary); margin-bottom:1rem;">Discover Ibadan</h2>
-    <p>This page will highlight Ibadan's history, demographics, and attractions. Coming in Week 4.</p>
-  </main>
-  <footer>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Ibadan Chamber of Commerce</span>
+
+  <div class="adire-strip" aria-hidden="true"></div>
+
+  <section class="hero" aria-labelledby="page-heading">
+    <div class="hero-inner">
+      <h1 id="page-heading">Discover <span>Ibadan</span></h1>
+      <p>History, landmarks, demographics, and the soul of Nigeria's most populous city.</p>
     </div>
+  </section>
+
+  <main style="padding:2rem 1.2rem; max-width:900px; margin:0 auto;">
+    <h2 style="font-family:'Playfair Display',serif; color:var(--green-deep); margin-bottom:1rem;">About Ibadan</h2>
+    <p style="color:var(--ink-muted); line-height:1.8;">
+      Ibadan is the capital of Oyo State and the third-largest city in Nigeria by population.
+      Known for its rich Yoruba heritage, it is home to the University of Ibadan — Nigeria's
+      oldest university — Cocoa House (West Africa's first skyscraper), and the historic Mapo Hall.
+      The city is a major commercial and agricultural hub, driving trade across the South-West.
+    </p>
+    <p style="margin-top:1rem; color:var(--ink-muted);">Full content — history, image montage, and demographics — coming in Week 4.</p>
+  </main>
+
+  <div class="adire-strip" aria-hidden="true"></div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>Ibadan Chamber of Commerce</strong>
+        <p>Dugbe, Ibadan<br />Oyo State, Nigeria 200001<br />info@ibadanchamber.ng<br />+234 803 000 0000</p>
+      </div>
+      <div class="footer-dev">
+        <strong>WDD 231 Class Project</strong><br />
+        Eyuro Foluso<br />
+        &copy; <span id="copyright-year"></span> Ibadan Chamber of Commerce<br />
+        Last Modified: <span id="last-modified"></span>
+      </div>
+    </div>
+    <div class="footer-bottom">Built with semantic HTML, vanilla CSS &amp; JavaScript &mdash; WDD 231</div>
   </footer>
-  <script src="scripts/main.js"></script>
+
+  <script src="scripts/directory.js" defer></script>
 </body>
 </html>
