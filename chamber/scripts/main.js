@@ -1,13 +1,15 @@
 /* ============================================================
    Ibadan Chamber – main.js  (home page)
-   Weather + Spotlights + shared nav/footer logic
+   Weather via OpenWeatherMap API + Member Spotlights
    ============================================================ */
 'use strict';
 
 // ── CONFIG ───────────────────────────────────────────────────
-const OWM_KEY = 'YOUR_API_KEY'; // Replace with key from openweathermap.org
-const CITY_ID = '2339354';      // Ibadan, Nigeria
-const UNITS   = 'metric';
+// Get a free API key at https://openweathermap.org/appid
+// Then replace the string below with your key.
+const OWM_KEY = '201985cb7ff18fe73f0c9727b4702584';
+const CITY_ID = '2339354';   // Ibadan, Nigeria (OpenWeatherMap city ID)
+const UNITS   = 'metric';    // Celsius
 
 // ── DOM REFS ─────────────────────────────────────────────────
 const weatherBody    = document.querySelector('.weather-body');
@@ -15,24 +17,12 @@ const forecastBody   = document.querySelector('.forecast-body');
 const spotlightsBody = document.querySelector('.spotlights-body');
 const menuToggle     = document.getElementById('menu-toggle');
 const navList        = document.getElementById('nav-list');
-const themeBtn       = document.querySelector('.theme-btn');
 const copyrightYr    = document.getElementById('copyright-year');
 const lastModified   = document.getElementById('last-modified');
 
 // ── FOOTER META ──────────────────────────────────────────────
 if (copyrightYr)  copyrightYr.textContent  = new Date().getFullYear();
 if (lastModified) lastModified.textContent = document.lastModified;
-
-// ── DARK MODE ────────────────────────────────────────────────
-function applyTheme(dark) {
-  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
-}
-applyTheme(localStorage.getItem('ibadanTheme') === 'dark');
-themeBtn?.addEventListener('click', () => {
-  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-  applyTheme(!isDark);
-  localStorage.setItem('ibadanTheme', !isDark ? 'dark' : 'light');
-});
 
 // ── MOBILE NAV ───────────────────────────────────────────────
 menuToggle?.addEventListener('click', () => {
@@ -44,7 +34,10 @@ menuToggle?.addEventListener('click', () => {
 navList?.addEventListener('click', e => {
   if (e.target.tagName === 'A') {
     navList.closest('nav')?.classList.remove('open');
-    if (menuToggle) { menuToggle.setAttribute('aria-expanded','false'); menuToggle.textContent='☰'; }
+    if (menuToggle) {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.textContent = '☰';
+    }
   }
 });
 
@@ -65,13 +58,17 @@ const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
 // ── CURRENT WEATHER ──────────────────────────────────────────
 async function loadCurrentWeather() {
   if (!weatherBody) return;
-  if (OWM_KEY === 'YOUR_API_KEY') { renderWeatherPlaceholder(); return; }
+  if (OWM_KEY === 'YOUR_API_KEY') {
+    renderWeatherPlaceholder();
+    return;
+  }
   try {
-    const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?id=${CITY_ID}&units=${UNITS}&appid=${OWM_KEY}`);
-    if (!res.ok) throw new Error(res.status);
+    const url = `https://api.openweathermap.org/data/2.5/weather?id=${CITY_ID}&units=${UNITS}&appid=${OWM_KEY}`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const d = await res.json();
-    const rise = new Date(d.sys.sunrise*1000).toLocaleTimeString('en-NG',{hour:'2-digit',minute:'2-digit'});
-    const set  = new Date(d.sys.sunset *1000).toLocaleTimeString('en-NG',{hour:'2-digit',minute:'2-digit'});
+    const rise = new Date(d.sys.sunrise * 1000).toLocaleTimeString('en-NG', { hour: '2-digit', minute: '2-digit' });
+    const set  = new Date(d.sys.sunset  * 1000).toLocaleTimeString('en-NG', { hour: '2-digit', minute: '2-digit' });
     weatherBody.innerHTML = `
       <div class="weather-current">
         <div class="weather-icon">${weatherIcon(d.weather[0].id)}</div>
@@ -87,11 +84,12 @@ async function loadCurrentWeather() {
           </div>
         </div>
       </div>`;
-  } catch { weatherBody.innerHTML = '<p class="weather-loading">Weather unavailable.</p>'; }
+  } catch {
+    weatherBody.innerHTML = '<p class="weather-loading">Weather data unavailable.</p>';
+  }
 }
 
 function renderWeatherPlaceholder() {
-  if (!weatherBody) return;
   weatherBody.innerHTML = `
     <div class="weather-current">
       <div class="weather-icon">⛅</div>
@@ -104,40 +102,66 @@ function renderWeatherPlaceholder() {
           <span>Sunset: 6:48pm</span>
         </div>
       </div>
-    </div>
-    <p style="font-size:.72rem;color:var(--ink-muted);margin-top:.5rem;">
-      ℹ️ Add your OpenWeatherMap API key in main.js for live data.
-    </p>`;
+    </div>`;
 }
 
-// ── FORECAST ─────────────────────────────────────────────────
+// ── 3-DAY FORECAST ───────────────────────────────────────────
+// Uses the free 5-day / 3-hour forecast endpoint.
+// Groups readings by calendar day and picks the daily high.
 async function loadForecast() {
   if (!forecastBody) return;
-  if (OWM_KEY === 'YOUR_API_KEY') { renderForecastPlaceholder(); return; }
+  if (OWM_KEY === 'YOUR_API_KEY') {
+    renderForecastPlaceholder();
+    return;
+  }
   try {
-    const res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?id=${CITY_ID}&units=${UNITS}&cnt=24&appid=${OWM_KEY}`);
-    if (!res.ok) throw new Error(res.status);
-    const d  = await res.json();
-    const tz = d.city.timezone;
-    const days = {};
-    for (const item of d.list) {
-      const key = new Date((item.dt+tz)*1000).toISOString().slice(0,10);
-      if (!days[key]) days[key] = { max: -999, dt: item.dt };
-      days[key].max = Math.max(days[key].max, Math.round(item.main.temp_max));
-    }
-    const entries = Object.entries(days).slice(1,4);
-    forecastBody.innerHTML = entries.map(([,v]) => {
-      const label = new Date((v.dt+tz)*1000).toLocaleDateString('en-NG',{weekday:'long'});
-      return `<div class="forecast-row"><span class="day">${label}</span><span class="temp">${v.max}°C</span></div>`;
+    const url = `https://api.openweathermap.org/data/2.5/forecast?id=${CITY_ID}&units=${UNITS}&appid=${OWM_KEY}`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+
+    // Group all 3-hour slots by UTC date string, find daily high
+    const byDay = {};
+    data.list.forEach(item => {
+      const dateKey = new Date(item.dt * 1000).toISOString().slice(0, 10);
+      if (!byDay[dateKey]) byDay[dateKey] = { max: -Infinity, dt: item.dt };
+      const t = Math.round(item.main.temp_max ?? item.main.temp);
+      if (t > byDay[dateKey].max) byDay[dateKey].max = t;
+    });
+
+    // Skip today (index 0), take next 3 days
+    const today   = new Date().toISOString().slice(0, 10);
+    const entries = Object.entries(byDay)
+      .filter(([key]) => key > today)
+      .slice(0, 3);
+
+    forecastBody.innerHTML = entries.map(([, v]) => {
+      const label = new Date(v.dt * 1000).toLocaleDateString('en-NG', { weekday: 'long' });
+      return `<div class="forecast-row">
+                <span class="day">${label}</span>
+                <span class="temp">${v.max}°C</span>
+              </div>`;
     }).join('');
-  } catch { forecastBody.innerHTML = '<p class="weather-loading">Forecast unavailable.</p>'; }
+  } catch {
+    forecastBody.innerHTML = '<p class="weather-loading">Forecast unavailable.</p>';
+  }
 }
 
+// Placeholder uses real upcoming day names from Date — never hardcoded strings
 function renderForecastPlaceholder() {
-  if (!forecastBody) return;
-  [['Tomorrow','34°C'],['Wednesday','31°C'],['Thursday','29°C']].forEach(([d,t]) => {
-    forecastBody.innerHTML += `<div class="forecast-row"><span class="day">${d}</span><span class="temp">${t}</span></div>`;
+  const today = new Date();
+  const rows = [1, 2, 3].map(offset => {
+    const d     = new Date(today);
+    d.setDate(today.getDate() + offset);
+    const label = d.toLocaleDateString('en-NG', { weekday: 'long' });
+    // Plausible placeholder temps for Ibadan (warm tropical climate)
+    const temps = [34, 32, 31];
+    return `<div class="forecast-row">
+              <span class="day">${label}</span>
+              <span class="temp">${temps[offset - 1]}°C</span>
+            </div>`;
   });
+  forecastBody.innerHTML = rows.join('');
 }
 
 // ── SPOTLIGHTS ───────────────────────────────────────────────
@@ -145,11 +169,12 @@ async function loadSpotlights() {
   if (!spotlightsBody) return;
   try {
     const res  = await fetch('./scripts/members.json');
-    if (!res.ok) throw new Error(res.status);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
-    const eligible = data.members.filter(m => m.membership === 'gold' || m.membership === 'silver');
-    const picks    = eligible.sort(() => Math.random() - .5).slice(0, 3);
-
+    const eligible = data.members.filter(m =>
+      m.membership === 'gold' || m.membership === 'silver'
+    );
+    const picks = eligible.sort(() => Math.random() - 0.5).slice(0, 3);
     spotlightsBody.innerHTML = picks.map(m => `
       <div class="spotlight-card">
         <div class="spotlight-logo" style="background:${m.color}">${m.initial}</div>
@@ -164,7 +189,7 @@ async function loadSpotlights() {
         </div>
       </div>`).join('');
   } catch {
-    spotlightsBody.innerHTML = '<p class="weather-loading">Could not load spotlights.</p>';
+    spotlightsBody.innerHTML = '<p class="weather-loading">Could not load member spotlights.</p>';
   }
 }
 

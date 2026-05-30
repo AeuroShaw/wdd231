@@ -38,16 +38,7 @@
   --np-badge-bd:     #6ab07a;
 }
 
-/* dark mode */
-[data-theme="dark"] {
-  --cream:       #0e1c12;
-  --cream-dark:  #182a1e;
-  --white:       #1e3025;
-  --ink:         #e8e8dc;
-  --ink-muted:   #8aaa90;
-  --border:      #2a402e;
-  --gold-pale:   #2a1e00;
-}
+
 
 /* ── RESET ───────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -158,8 +149,7 @@ nav.open { transform: translateY(0); }
   padding: .5rem 0;
 }
 
-#nav-list li a,
-#nav-list li .theme-btn {
+#nav-list li a {
   display: block;
   padding: .75rem 1.4rem;
   color: #c8e0d0;
@@ -176,8 +166,7 @@ nav.open { transform: translateY(0); }
   font-family: 'Lato', sans-serif;
 }
 
-#nav-list li a:hover,
-#nav-list li .theme-btn:hover { color: #fff; background: rgba(200,134,10,.28); }
+#nav-list li a:hover { color: #fff; background: rgba(200,134,10,.28); }
 #nav-list li a.active { color: #fff; background: rgba(200,134,10,.32); border-left: 3px solid var(--gold-light); padding-left: calc(1.4rem - 3px); }
 
 /* ── ADIRE STRIP ─────────────────────────────────── */

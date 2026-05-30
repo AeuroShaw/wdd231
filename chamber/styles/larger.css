@@ -33,8 +33,7 @@
     gap: .1rem;
   }
 
-  #nav-list li a,
-  #nav-list li .theme-btn {
+  #nav-list li a {
     display: inline-block;
     padding: .42rem .9rem;
     font-size: .85rem;

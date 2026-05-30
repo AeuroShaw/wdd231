@@ -17,34 +17,12 @@ const btnGrid      = document.getElementById('btn-grid');
 const btnList      = document.getElementById('btn-list');
 const menuToggle   = document.getElementById('menu-toggle');
 const navList      = document.getElementById('nav-list');
-const themeBtn     = document.querySelector('.theme-btn');
 const copyrightYr  = document.getElementById('copyright-year');
 const lastModified = document.getElementById('last-modified');
 
 // ── FOOTER META ───────────────────────────────────────────────
 if (copyrightYr)  copyrightYr.textContent  = new Date().getFullYear();
 if (lastModified) lastModified.textContent = document.lastModified;
-
-// Also sync theme on page load (shared with main.js)
-const _savedTheme = localStorage.getItem('ibadanTheme');
-if (_savedTheme) document.documentElement.setAttribute('data-theme', _savedTheme);
-
-// ── DARK MODE ─────────────────────────────────────────────────
-function applyTheme(dark) {
-  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
-  if (themeBtn) themeBtn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Toggle dark mode');
-}
-
-const savedTheme = localStorage.getItem('ibadanTheme');
-applyTheme(savedTheme === 'dark');
-
-if (themeBtn) {
-  themeBtn.addEventListener('click', () => {
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    applyTheme(!isDark);
-    localStorage.setItem('ibadanTheme', !isDark ? 'dark' : 'light');
-  });
-}
 
 // ── MOBILE NAV TOGGLE ─────────────────────────────────────────
 if (menuToggle) {
