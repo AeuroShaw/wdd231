@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thank you for applying to join the Ibadan Chamber of Commerce. We will be in touch shortly.">
+  <meta name="author" content="Eyuro Foluso">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%230f2e1a'/><text y='.88em' font-size='62' x='50%' text-anchor='middle' font-family='Georgia,serif' fill='%23c8860a'>I</text></svg>">
+
+  <title>Application Received | Ibadan Chamber of Commerce</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+  <link rel="stylesheet" href="styles/join.css">
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="header-brand" aria-label="Ibadan Chamber of Commerce Home">
+      <div class="header-logo" aria-hidden="true">I</div>
+      <div class="header-title">
+        Ibadan Chamber of Commerce
+        <span>Oyo State, Nigeria</span>
+      </div>
+    </a>
+    <button id="menu-toggle" aria-controls="nav-list" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+    <nav aria-label="Main navigation">
+      <ul id="nav-list" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><button class="theme-btn" aria-label="Toggle dark mode" title="Toggle dark mode">◑</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="adire-strip" aria-hidden="true"></div>
+
+  <section class="hero" aria-labelledby="ty-heading">
+    <div class="hero-inner">
+      <h1 id="ty-heading">Application <span>Received!</span></h1>
+      <p>We're thrilled to welcome you to the Ibadan business community.</p>
+    </div>
+  </section>
+
+  <main class="thankyou-main">
+
+    <div class="ty-card">
+      <div class="ty-icon" aria-hidden="true">🎉</div>
+      <h2>Thank You for Applying!</h2>
+      <p>Your membership application has been received. A member of our team will review your submission and contact you within <strong>3–5 business days</strong>.</p>
+
+      <section class="ty-summary" aria-labelledby="summary-heading">
+        <h3 id="summary-heading">Your Application Summary</h3>
+        <dl class="summary-list" id="summary-list">
+          <!-- Populated by thankyou.js -->
+        </dl>
+      </section>
+
+      <div class="ty-actions">
+        <a href="index.html" class="ty-btn ty-btn--primary">Return Home</a>
+        <a href="directory.html" class="ty-btn ty-btn--secondary">Browse the Directory</a>
+      </div>
+    </div>
+
+  </main>
+
+  <div class="adire-strip" aria-hidden="true"></div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>Ibadan Chamber of Commerce</strong>
+        <p>Dugbe, Ibadan<br>Oyo State, Nigeria 200001<br>info@ibadanchamber.ng<br>+234 803 000 0000</p>
+      </div>
+      <div>
+        <p class="footer-social-label">Follow Us</p>
+        <div class="footer-social">
+          <a href="https://youtube.com"  target="_blank" rel="noopener" aria-label="YouTube">▶</a>
+          <a href="https://twitter.com"  target="_blank" rel="noopener" aria-label="Twitter / X">𝕏</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div class="footer-dev">
+        <strong>WDD 231 Class Project</strong><br>
+        Eyuro Foluso<br>
+        &copy; <span id="copyright-year"></span> Ibadan Chamber of Commerce<br>
+        Last Modified: <span id="last-modified"></span>
+      </div>
+    </div>
+    <div class="footer-bottom">Built with semantic HTML, vanilla CSS &amp; JavaScript &mdash; WDD 231</div>
+  </footer>
+
+  <script src="scripts/directory.js" defer></script>
+  <script src="scripts/thankyou.js" defer></script>
+</body>
+</html>

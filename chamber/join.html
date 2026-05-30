@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Join the Ibadan Chamber of Commerce. Choose from Non-Profit, Silver, or Gold membership tiers and grow your business with us.">
+  <meta name="description" content="Join the Ibadan Chamber of Commerce. Choose from Non-Profit, Bronze, Silver, or Gold membership and grow your business with us.">
   <meta name="author" content="Eyuro Foluso">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Join the Ibadan Chamber of Commerce | Membership">
@@ -21,9 +21,11 @@
 
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
+  <link rel="stylesheet" href="styles/join.css">
 </head>
 <body>
 
+  <!-- ══ HEADER ══════════════════════════════════ -->
   <header>
     <a href="index.html" class="header-brand" aria-label="Ibadan Chamber of Commerce Home">
       <div class="header-logo" aria-hidden="true">I</div>
@@ -46,23 +48,239 @@
 
   <div class="adire-strip" aria-hidden="true"></div>
 
+  <!-- ══ HERO ════════════════════════════════════ -->
   <section class="hero" aria-labelledby="page-heading">
     <div class="hero-inner">
       <h1 id="page-heading">Join the <span>Chamber</span></h1>
-      <p>Become a member and gain access to networking, resources, and a stronger business community.</p>
+      <p>Become a member and connect with Ibadan's most active business community.</p>
     </div>
   </section>
 
-  <main>
-    <h2>Membership Tiers</h2>
-    <p>We offer three membership levels: Non-Profit, Silver, and Gold.
-    Each tier provides increasing benefits including directory listings, event invitations,
-    social media promotion, luncheons, sponsorship opportunities, and advertising support.</p>
-    <p>Full membership application form and benefits breakdown coming soon.</p>
+  <!-- ══ MAIN ════════════════════════════════════ -->
+  <main class="join-main">
+
+    <!-- APPLICATION FORM -->
+    <section class="form-section" aria-labelledby="form-heading">
+      <h2 id="form-heading">Membership Application</h2>
+
+      <form action="thankyou.html" method="get" id="join-form" novalidate>
+
+        <!-- Name row -->
+        <div class="field-row">
+          <label for="fname">
+            First Name <span class="req" aria-hidden="true">*</span>
+            <input type="text" id="fname" name="fname"
+              title="Enter your first name"
+              autocomplete="given-name"
+              placeholder="Amaka"
+              required>
+          </label>
+
+          <label for="lname">
+            Last Name <span class="req" aria-hidden="true">*</span>
+            <input type="text" id="lname" name="lname"
+              title="Enter your last name"
+              autocomplete="family-name"
+              placeholder="Okafor"
+              required>
+          </label>
+        </div>
+
+        <!-- Org title -->
+        <label for="org-title">
+          Your Title at Organisation
+          <input type="text" id="org-title" name="org-title"
+            title="Your position or title within your organisation (letters, hyphens, spaces, minimum 7 characters)"
+            autocomplete="organization-title"
+            placeholder="Managing Director"
+            pattern="[A-Za-z\- ]{7,}">
+          <span class="field-hint">Letters, hyphens, and spaces only — minimum 7 characters.</span>
+        </label>
+
+        <!-- Email -->
+        <label for="email">
+          Email Address <span class="req" aria-hidden="true">*</span>
+          <input type="email" id="email" name="email"
+            title="Enter a valid email address"
+            autocomplete="email"
+            placeholder="amaka@yourbusiness.ng"
+            required>
+        </label>
+
+        <!-- Phone -->
+        <label for="phone">
+          Mobile Phone <span class="req" aria-hidden="true">*</span>
+          <input type="tel" id="phone" name="phone"
+            title="Enter your mobile phone number"
+            autocomplete="tel"
+            placeholder="+234 803 000 0000"
+            required>
+        </label>
+
+        <!-- Business name -->
+        <label for="org-name">
+          Business / Organisation Name <span class="req" aria-hidden="true">*</span>
+          <input type="text" id="org-name" name="org-name"
+            title="Enter the full name of your business or organisation"
+            autocomplete="organization"
+            placeholder="Okafor Enterprises Ltd"
+            required>
+        </label>
+
+        <!-- Membership level -->
+        <label for="membership">
+          Membership Level <span class="req" aria-hidden="true">*</span>
+          <select id="membership" name="membership" title="Select a membership level" required>
+            <option value="" disabled selected>— Select a level —</option>
+            <option value="np">NP Membership — Non-Profit (Free)</option>
+            <option value="bronze">Bronze Membership</option>
+            <option value="silver">Silver Membership</option>
+            <option value="gold">Gold Membership</option>
+          </select>
+        </label>
+
+        <!-- Description -->
+        <label for="description">
+          About Your Business / Organisation
+          <textarea id="description" name="description"
+            title="Briefly describe your business or organisation"
+            rows="4"
+            placeholder="Tell us about what your business does and what you hope to gain from membership…"></textarea>
+        </label>
+
+        <!-- Hidden timestamp -->
+        <input type="hidden" id="timestamp" name="timestamp">
+
+        <!-- Submit -->
+        <input type="submit" value="Submit Application" class="submit-btn">
+
+        <p class="form-note"><span class="req" aria-hidden="true">*</span> Required fields</p>
+      </form>
+    </section>
+
+    <!-- MEMBERSHIP CARDS -->
+    <aside class="membership-cards" aria-labelledby="cards-heading">
+      <h2 id="cards-heading">Membership Levels</h2>
+
+      <div class="cards-grid">
+
+        <div class="mem-card mem-card--np" style="--delay:0.05s">
+          <div class="mem-card-icon" aria-hidden="true">🌿</div>
+          <h3>NP Membership</h3>
+          <p class="mem-price">Free</p>
+          <p class="mem-tagline">For non-profit organisations serving Ibadan's community.</p>
+          <button class="mem-info-btn" data-modal="modal-np" aria-haspopup="dialog">Learn More</button>
+        </div>
+
+        <div class="mem-card mem-card--bronze" style="--delay:0.15s">
+          <div class="mem-card-icon" aria-hidden="true">🥉</div>
+          <h3>Bronze Membership</h3>
+          <p class="mem-price">₦50,000 <span>/yr</span></p>
+          <p class="mem-tagline">For small businesses starting their growth journey.</p>
+          <button class="mem-info-btn" data-modal="modal-bronze" aria-haspopup="dialog">Learn More</button>
+        </div>
+
+        <div class="mem-card mem-card--silver" style="--delay:0.25s">
+          <div class="mem-card-icon" aria-hidden="true">🥈</div>
+          <h3>Silver Membership</h3>
+          <p class="mem-price">₦120,000 <span>/yr</span></p>
+          <p class="mem-tagline">For established businesses seeking greater visibility.</p>
+          <button class="mem-info-btn" data-modal="modal-silver" aria-haspopup="dialog">Learn More</button>
+        </div>
+
+        <div class="mem-card mem-card--gold" style="--delay:0.35s">
+          <div class="mem-card-icon" aria-hidden="true">⭐</div>
+          <h3>Gold Membership</h3>
+          <p class="mem-price">₦250,000 <span>/yr</span></p>
+          <p class="mem-tagline">Premium benefits for Ibadan's leading organisations.</p>
+          <button class="mem-info-btn" data-modal="modal-gold" aria-haspopup="dialog">Learn More</button>
+        </div>
+
+      </div>
+    </aside>
+
   </main>
+
+  <!-- ══ MODALS ═══════════════════════════════════ -->
+
+  <dialog id="modal-np" aria-labelledby="modal-np-title">
+    <div class="modal-inner">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <div class="modal-icon" aria-hidden="true">🌿</div>
+      <h2 id="modal-np-title">NP Membership</h2>
+      <p class="modal-price">Free of charge</p>
+      <ul class="modal-benefits">
+        <li>✅ Basic listing in the online business directory</li>
+        <li>✅ Access to monthly Chamber newsletter</li>
+        <li>✅ Invitation to community networking events</li>
+        <li>✅ Certificate of Chamber membership</li>
+        <li>✅ Access to member resource library</li>
+      </ul>
+      <p class="modal-note">Available exclusively to registered non-profit and charitable organisations.</p>
+      <button class="modal-apply-btn" data-level="np">Apply for NP Membership</button>
+    </div>
+  </dialog>
+
+  <dialog id="modal-bronze" aria-labelledby="modal-bronze-title">
+    <div class="modal-inner">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <div class="modal-icon" aria-hidden="true">🥉</div>
+      <h2 id="modal-bronze-title">Bronze Membership</h2>
+      <p class="modal-price">₦50,000 per year</p>
+      <ul class="modal-benefits">
+        <li>✅ Everything in NP, plus:</li>
+        <li>✅ Standard directory listing with contact details</li>
+        <li>✅ 10% discount on Chamber events and workshops</li>
+        <li>✅ Quarterly business development seminars</li>
+        <li>✅ Access to the Chamber's job board</li>
+        <li>✅ Member-to-member discount programme</li>
+      </ul>
+      <button class="modal-apply-btn" data-level="bronze">Apply for Bronze Membership</button>
+    </div>
+  </dialog>
+
+  <dialog id="modal-silver" aria-labelledby="modal-silver-title">
+    <div class="modal-inner">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <div class="modal-icon" aria-hidden="true">🥈</div>
+      <h2 id="modal-silver-title">Silver Membership</h2>
+      <p class="modal-price">₦120,000 per year</p>
+      <ul class="modal-benefits">
+        <li>✅ Everything in Bronze, plus:</li>
+        <li>✅ Featured directory listing with logo and description</li>
+        <li>✅ Eligibility for home page Spotlight rotation</li>
+        <li>✅ 20% discount on all Chamber events</li>
+        <li>✅ One free exhibitor table at annual Trade Expo</li>
+        <li>✅ Monthly Chamber social media mentions</li>
+        <li>✅ Priority seating at networking luncheons</li>
+      </ul>
+      <button class="modal-apply-btn" data-level="silver">Apply for Silver Membership</button>
+    </div>
+  </dialog>
+
+  <dialog id="modal-gold" aria-labelledby="modal-gold-title">
+    <div class="modal-inner">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <div class="modal-icon" aria-hidden="true">⭐</div>
+      <h2 id="modal-gold-title">Gold Membership</h2>
+      <p class="modal-price">₦250,000 per year</p>
+      <ul class="modal-benefits">
+        <li>✅ Everything in Silver, plus:</li>
+        <li>✅ Premium homepage Spotlight (guaranteed rotation)</li>
+        <li>✅ Featured placement at top of business directory</li>
+        <li>✅ Free registration for up to 3 staff at all events</li>
+        <li>✅ Dedicated Chamber social media campaign (quarterly)</li>
+        <li>✅ Co-branding opportunity on Chamber publications</li>
+        <li>✅ Complimentary sponsorship of one annual event</li>
+        <li>✅ One-on-one business advisory session per quarter</li>
+      </ul>
+      <button class="modal-apply-btn" data-level="gold">Apply for Gold Membership</button>
+    </div>
+  </dialog>
 
   <div class="adire-strip" aria-hidden="true"></div>
 
+  <!-- ══ FOOTER ═══════════════════════════════════ -->
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
@@ -88,5 +306,6 @@
   </footer>
 
   <script src="scripts/directory.js" defer></script>
+  <script src="scripts/join.js" defer></script>
 </body>
 </html>

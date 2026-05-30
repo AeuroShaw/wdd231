@@ -1,0 +1,439 @@
+/* =====================================================
+   Ibadan Chamber – join.css
+   Covers: join.html form, membership cards & animations,
+   modals, and thankyou.html summary card.
+   ===================================================== */
+
+/* ── JOIN MAIN LAYOUT ─────────────────────────────── */
+.join-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.8rem 1rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+/* ── FORM SECTION ─────────────────────────────────── */
+.form-section h2,
+.membership-cards h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--green-deep);
+  margin-bottom: 1.2rem;
+  padding-bottom: .5rem;
+  border-bottom: 2px solid var(--gold);
+}
+
+#join-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+/* Every label wraps its input for accessibility */
+#join-form label,
+#join-form .field-row label {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--green-deep);
+}
+
+/* Two-column name row */
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Inputs, selects, textareas */
+#join-form input[type="text"],
+#join-form input[type="email"],
+#join-form input[type="tel"],
+#join-form select,
+#join-form textarea {
+  width: 100%;
+  padding: .6rem .85rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--ink);
+  font-family: 'Lato', sans-serif;
+  font-size: .92rem;
+  line-height: 1.5;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  margin-top: .1rem;
+}
+
+#join-form input:focus,
+#join-form select:focus,
+#join-form textarea:focus {
+  outline: none;
+  border-color: var(--green-mid);
+  box-shadow: 0 0 0 3px rgba(26,74,42,.15);
+}
+
+#join-form input:invalid:not(:placeholder-shown),
+#join-form select:invalid {
+  border-color: #c0392b;
+}
+
+#join-form input:valid:not(:placeholder-shown) {
+  border-color: var(--green-light);
+}
+
+#join-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+#join-form select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%231a4a2a' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right .85rem center;
+  padding-right: 2.2rem;
+  cursor: pointer;
+}
+
+.field-hint {
+  font-size: .74rem;
+  font-weight: 400;
+  color: var(--ink-muted);
+  margin-top: -.1rem;
+}
+
+.req { color: #b03020; margin-left: .15rem; }
+
+/* Submit button */
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: .85rem;
+  background: var(--green-mid);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  cursor: pointer;
+  transition: background var(--transition), transform .15s;
+  margin-top: .4rem;
+}
+
+.submit-btn:hover { background: var(--green-deep); transform: translateY(-1px); }
+.submit-btn:active { transform: translateY(0); }
+
+.form-note {
+  font-size: .75rem;
+  color: var(--ink-muted);
+  text-align: right;
+}
+
+/* ── MEMBERSHIP CARDS ─────────────────────────────── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .9rem;
+}
+
+/* Entry animation: cards slide up and fade in */
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mem-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem .9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: .3rem;
+  box-shadow: var(--shadow-sm);
+  /* Trigger animation on page load using CSS animation-delay via inline --delay var */
+  animation: cardReveal 0.55s cubic-bezier(.22,.68,0,1.2) both;
+  animation-delay: var(--delay, 0s);
+  transition: transform .2s, box-shadow .2s;
+}
+
+.mem-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.mem-card-icon { font-size: 1.8rem; line-height: 1; margin-bottom: .1rem; }
+
+.mem-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: .92rem;
+  color: var(--green-deep);
+  line-height: 1.2;
+}
+
+.mem-price {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: .2rem 0 0;
+}
+.mem-price span { font-size: .78rem; font-weight: 400; color: var(--ink-muted); }
+
+.mem-tagline {
+  font-size: .75rem;
+  color: var(--ink-muted);
+  flex: 1;
+  line-height: 1.4;
+}
+
+/* Per-tier accent colours */
+.mem-card--np     { border-top: 4px solid var(--np-badge-bd); }
+.mem-card--np     .mem-price { color: var(--np-badge-fg); }
+.mem-card--bronze { border-top: 4px solid #cd7f32; }
+.mem-card--bronze .mem-price { color: #7a4a00; }
+.mem-card--silver { border-top: 4px solid var(--silver-badge-bd); }
+.mem-card--silver .mem-price { color: var(--silver-badge-fg); }
+.mem-card--gold   { border-top: 4px solid var(--gold); }
+.mem-card--gold   .mem-price { color: var(--gold-badge-fg); }
+
+.mem-info-btn {
+  margin-top: .5rem;
+  padding: .38rem .9rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--green-mid);
+  background: none;
+  color: var(--green-mid);
+  font-family: 'Lato', sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+.mem-info-btn:hover { background: var(--green-mid); color: #fff; }
+
+/* ── MODALS ───────────────────────────────────────── */
+dialog {
+  border: none;
+  border-radius: var(--radius);
+  padding: 0;
+  max-width: 440px;
+  width: calc(100% - 2rem);
+  box-shadow: var(--shadow-lg);
+  background: var(--white);
+}
+
+dialog::backdrop {
+  background: rgba(10,24,14,.65);
+  backdrop-filter: blur(3px);
+}
+
+.modal-inner {
+  padding: 1.8rem 1.6rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: .8rem;
+  right: .9rem;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--ink-muted);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+}
+.modal-close:hover { background: var(--cream-dark); }
+
+.modal-icon { font-size: 2.2rem; text-align: center; line-height: 1; }
+
+.modal-inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--green-deep);
+  text-align: center;
+}
+
+.modal-price {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--gold-badge-fg);
+  margin-bottom: .4rem;
+}
+
+.modal-benefits {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  font-size: .88rem;
+  color: var(--ink);
+  padding: .5rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-note {
+  font-size: .78rem;
+  color: var(--ink-muted);
+  font-style: italic;
+}
+
+.modal-apply-btn {
+  display: block;
+  width: 100%;
+  padding: .7rem;
+  background: var(--green-mid);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: 'Lato', sans-serif;
+  font-size: .9rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: .4rem;
+  transition: background var(--transition);
+}
+.modal-apply-btn:hover { background: var(--green-deep); }
+
+/* ── THANK YOU PAGE ───────────────────────────────── */
+.thankyou-main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+.ty-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 2rem 1.5rem;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  animation: cardReveal .5s ease both;
+}
+
+.ty-icon { font-size: 3rem; line-height: 1; margin-bottom: .5rem; }
+
+.ty-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--green-deep);
+  margin-bottom: .6rem;
+}
+
+.ty-card > p {
+  font-size: .92rem;
+  color: var(--ink-muted);
+  margin-bottom: 1.4rem;
+  max-width: 440px;
+  margin-inline: auto;
+}
+
+/* Summary block */
+.ty-summary {
+  background: var(--cream);
+  border-radius: var(--radius-sm);
+  padding: 1.2rem 1.4rem;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border);
+}
+
+.ty-summary h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--green-deep);
+  margin-bottom: .8rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.summary-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .4rem .8rem;
+  font-size: .88rem;
+}
+
+.summary-list dt {
+  font-weight: 700;
+  color: var(--green-mid);
+  white-space: nowrap;
+}
+
+.summary-list dd { color: var(--ink); }
+
+/* Action buttons */
+.ty-actions {
+  display: flex;
+  gap: .8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ty-btn {
+  padding: .65rem 1.4rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: .9rem;
+  text-decoration: none;
+  transition: background var(--transition), transform .15s;
+}
+
+.ty-btn--primary {
+  background: var(--green-mid);
+  color: #fff;
+}
+.ty-btn--primary:hover { background: var(--green-deep); transform: translateY(-1px); text-decoration: none; }
+
+.ty-btn--secondary {
+  background: none;
+  color: var(--green-mid);
+  border: 1.5px solid var(--green-mid);
+}
+.ty-btn--secondary:hover { background: var(--green-mid); color: #fff; text-decoration: none; }
+
+/* ── RESPONSIVE ───────────────────────────────────── */
+@media (min-width: 480px) {
+  .cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 860px) {
+  .join-main {
+    grid-template-columns: 1fr 340px;
+    align-items: start;
+    padding: 2.5rem 2rem 4rem;
+  }
+
+  .cards-grid { grid-template-columns: 1fr 1fr; }
+
+  .mem-card { padding: 1.3rem 1rem 1.1rem; }
+}
+
+@media (min-width: 1060px) {
+  .join-main { grid-template-columns: 1fr 380px; }
+}
