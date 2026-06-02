@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site Plan – Lagos Street Food Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --color-bg:        #FDF6EC;
+      --color-primary:   #C0392B;
+      --color-secondary: #E67E22;
+      --color-dark:      #1A1209;
+      --color-mid:       #5C3D11;
+      --color-soft:      #F5DEB3;
+      --color-accent:    #27AE60;
+
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-dark);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background-color: var(--color-primary);
+      color: #fff;
+      padding: 2.5rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    header::after {
+      content: '🍢';
+      font-size: 8rem;
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.18;
+      pointer-events: none;
+    }
+    header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    header p {
+      margin-top: 0.4rem;
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    /* ── SECTION CARD ── */
+    section {
+      background: #fff;
+      border-left: 5px solid var(--color-secondary);
+      border-radius: 4px;
+      padding: 1.75rem 1.75rem 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    section h2 {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      color: var(--color-primary);
+      margin-bottom: 0.85rem;
+      border-bottom: 1px solid var(--color-soft);
+      padding-bottom: 0.5rem;
+    }
+
+    section p, section li { color: var(--color-mid); font-size: 0.97rem; }
+    section ul { padding-left: 1.2rem; }
+    section li { margin-bottom: 0.35rem; }
+
+    .label {
+      display: inline-block;
+      background: var(--color-soft);
+      color: var(--color-primary);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border-radius: 3px;
+      margin-bottom: 0.6rem;
+    }
+
+    /* ── COLOR SCHEME ── */
+    .palette {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+    .swatch {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .swatch-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.08);
+      flex-shrink: 0;
+    }
+    .swatch-info strong { display: block; font-size: 0.9rem; color: var(--color-dark); }
+    .swatch-info span   { font-size: 0.8rem; color: var(--color-mid); }
+
+    /* ── TYPOGRAPHY ── */
+    .type-demo { margin-top: 1rem; }
+    .type-demo + .type-demo { margin-top: 1.25rem; }
+    .type-sample-display {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--color-primary);
+      line-height: 1.2;
+    }
+    .type-sample-body {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--color-mid);
+      margin-top: 0.25rem;
+    }
+    .type-meta { font-size: 0.8rem; color: #999; margin-top: 0.3rem; }
+
+    /* ── WIREFRAMES ── */
+    .wireframes {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    @media (min-width: 600px) {
+      .wireframes { grid-template-columns: 160px 1fr; align-items: start; }
+    }
+
+    .wf-label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .wireframe-mobile svg,
+    .wireframe-desktop svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* ── SCENARIOS ── */
+    blockquote {
+      border-left: 3px solid var(--color-accent);
+      padding: 0.6rem 1rem;
+      margin: 0.6rem 0;
+      font-style: italic;
+      color: var(--color-mid);
+      background: #f9fdf9;
+      border-radius: 0 4px 4px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.83rem;
+      color: #aaa;
+      border-top: 1px solid var(--color-soft);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Site Plan</h1>
+  <p>Lagos Street Food Guide &nbsp;·&nbsp; Individual Website Project</p>
+</header>
+
+<main>
+
+  <!-- 1. SITE NAME -->
+  <section id="site-name">
+    <span class="label">1 · Site Name</span>
+    <h2>Lagos Street Food Guide</h2>
+    <p>
+      <strong>Proposed domain:</strong> <code>lagosstreetfood.com</code>
+    </p>
+    <p style="margin-top:0.75rem;">
+      The name directly communicates the site's subject and geography. Lagos is one
+      of Africa's most vibrant culinary cities, and its street-food culture is
+      globally underrepresented online. "Guide" signals that the site is a curated
+      resource — not just a listing — helping users make confident decisions about
+      what to eat and where.
+    </p>
+  </section>
+
+  <!-- 2. SITE PURPOSE -->
+  <section id="site-purpose">
+    <span class="label">2 · Site Purpose</span>
+    <h2>What the Site Does</h2>
+    <p>
+      Lagos Street Food Guide is a three-page informational site that celebrates
+      and documents the city's iconic street foods. It will provide:
+    </p>
+    <ul style="margin-top:0.6rem;">
+      <li>A <strong>home page</strong> featuring a hero introduction, a dynamically generated
+          grid of 15+ dishes (loaded from a local JSON file), and a spotlight on the
+          dish of the week.</li>
+      <li>A <strong>vendors &amp; spots page</strong> listing recommended street-food
+          locations with ratings, neighbourhood tags, and a modal for full details.</li>
+      <li>A <strong>culture &amp; tips page</strong> covering the history of Lagos street
+          food, eating etiquette, and a visitor contact/feedback form.</li>
+    </ul>
+    <p style="margin-top:0.75rem;">
+      JavaScript will power data fetching, dynamic rendering, modal dialogs, and
+      local-storage–based user preferences (e.g., saved favourite dishes).
+    </p>
+  </section>
+
+  <!-- 3. SCENARIOS -->
+  <section id="scenarios">
+    <span class="label">3 · Scenarios</span>
+    <h2>Target Audience Questions</h2>
+    <blockquote>
+      "I'm visiting Lagos for the first time — which street foods should I absolutely
+      try, and where can I find them safely?"
+    </blockquote>
+    <blockquote>
+      "I grew up eating suya and pepper soup — are there any vendors near Lagos
+      Island that are considered the most authentic?"
+    </blockquote>
+    <blockquote>
+      "What's the difference between boli and roasted plantain, and how do locals
+      typically eat them?"
+    </blockquote>
+  </section>
+
+  <!-- 4. COLOR SCHEME -->
+  <section id="color-scheme">
+    <span class="label">4 · Color Scheme</span>
+    <h2>Palette</h2>
+    <div class="palette">
+
+      <div class="swatch">
+        <div class="swatch-box" style="background:#C0392B;"></div>
+        <div class="swatch-info">
+          <strong>Pepper Red — #C0392B</strong>
+          <span>Primary brand color. Header background, headings, section borders, CTAs.</span>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="swatch-box" style="background:#E67E22;"></div>
+        <div class="swatch-info">
+          <strong>Suya Orange — #E67E22</strong>
+          <span>Secondary accent. Card borders, hover states, highlights.</span>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="swatch-box" style="background:#FDF6EC; border:1px solid #ddd;"></div>
+        <div class="swatch-info">
+          <strong>Warm Cream — #FDF6EC</strong>
+          <span>Page background. Keeps the feel warm and food-friendly.</span>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="swatch-box" style="background:#1A1209;"></div>
+        <div class="swatch-info">
+          <strong>Dark Espresso — #1A1209</strong>
+          <span>Body text, footer text.</span>
+        </div>
+      </div>
+
+      <div class="swatch">
+        <div class="swatch-box" style="background:#27AE60;"></div>
+        <div class="swatch-info">
+          <strong>Plantain Green — #27AE60</strong>
+          <span>Accent for success states, tags, and blockquote borders.</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. TYPOGRAPHY -->
+  <section id="typography">
+    <span class="label">5 · Typography</span>
+    <h2>Font Selections</h2>
+
+    <div class="type-demo">
+      <div class="type-sample-display">Playfair Display</div>
+      <p class="type-meta">Usage: Page headings (h1, h2), logo wordmark, dish names on cards — brings editorial warmth and Nigerian print-culture references.</p>
+    </div>
+
+    <div class="type-demo">
+      <div class="type-sample-body">DM Sans — Body copy, navigation links, labels, captions, form fields, and all utility text. Clear and highly readable at small sizes.</div>
+      <p class="type-meta">Usage: All body text, UI elements, form fields, captions.</p>
+    </div>
+
+    <p style="margin-top:1rem; font-size:0.9rem; color:var(--color-mid);">
+      Both fonts are loaded from Google Fonts. A maximum of two font families keeps
+      page weight low and maintains visual consistency across all three pages.
+    </p>
+  </section>
+
+  <!-- 6. WIREFRAME -->
+  <section id="wireframe">
+    <span class="label">6 · Wireframe — Home Page</span>
+    <h2>Layout Sketches</h2>
+    <p style="margin-bottom:1rem; font-size:0.9rem; color:var(--color-mid);">
+      Grey boxes represent image/media areas; lined boxes represent text content;
+      dashed outlines represent dynamic/JS-generated sections.
+    </p>
+
+    <div class="wireframes">
+
+      <!-- MOBILE -->
+      <div class="wireframe-mobile">
+        <p class="wf-label">Mobile (320px)</p>
+        <svg viewBox="0 0 160 420" xmlns="http://www.w3.org/2000/svg" aria-label="Mobile wireframe of home page">
+          <!-- phone chrome -->
+          <rect width="160" height="420" rx="10" fill="#f0ece4" stroke="#ccc" stroke-width="1.5"/>
+          <!-- nav bar -->
+          <rect x="0" y="0" width="160" height="28" rx="4" fill="#C0392B"/>
+          <rect x="10" y="10" width="60" height="8" rx="2" fill="rgba(255,255,255,0.7)"/>
+          <rect x="135" y="8" width="16" height="3" rx="1" fill="white" opacity="0.9"/>
+          <rect x="135" y="13" width="16" height="3" rx="1" fill="white" opacity="0.9"/>
+          <rect x="135" y="18" width="16" height="3" rx="1" fill="white" opacity="0.9"/>
+          <!-- hero -->
+          <rect x="8" y="36" width="144" height="62" rx="4" fill="#E67E22" opacity="0.35"/>
+          <rect x="18" y="50" width="80" height="8" rx="2" fill="#C0392B" opacity="0.6"/>
+          <rect x="18" y="62" width="110" height="5" rx="2" fill="#5C3D11" opacity="0.4"/>
+          <rect x="18" y="71" width="90" height="5" rx="2" fill="#5C3D11" opacity="0.4"/>
+          <rect x="18" y="84" width="50" height="10" rx="3" fill="#C0392B" opacity="0.8"/>
+          <!-- section label -->
+          <rect x="8" y="108" width="80" height="6" rx="2" fill="#E67E22" opacity="0.5"/>
+          <!-- cards (2-col grid) -->
+          <rect x="8"  y="120" width="68" height="55" rx="4" fill="#ddd"/>
+          <rect x="84" y="120" width="68" height="55" rx="4" fill="#ddd"/>
+          <rect x="8"  y="182" width="68" height="55" rx="4" fill="#ddd"/>
+          <rect x="84" y="182" width="68" height="55" rx="4" fill="#ddd"/>
+          <rect x="8"  y="244" width="68" height="55" rx="4" fill="#ddd"/>
+          <rect x="84" y="244" width="68" height="55" rx="4" fill="#ddd"/>
+          <!-- card text stubs -->
+          <rect x="12" y="154" width="58" height="5" rx="1" fill="#bbb"/>
+          <rect x="88" y="154" width="58" height="5" rx="1" fill="#bbb"/>
+          <rect x="12" y="161" width="40" height="4" rx="1" fill="#ccc"/>
+          <rect x="88" y="161" width="40" height="4" rx="1" fill="#ccc"/>
+          <!-- dashed border = dynamic section -->
+          <rect x="8" y="308" width="144" height="40" rx="4" fill="none" stroke="#E67E22" stroke-dasharray="4,3" stroke-width="1.2"/>
+          <rect x="18" y="317" width="80" height="5" rx="2" fill="#E67E22" opacity="0.4"/>
+          <rect x="18" y="326" width="60" height="5" rx="2" fill="#E67E22" opacity="3"/>
+          <!-- footer -->
+          <rect x="0" y="390" width="160" height="30" rx="0" fill="#1A1209" opacity="0.85"/>
+          <rect x="30" y="399" width="100" height="5" rx="2" fill="white" opacity="0.3"/>
+          <!-- label -->
+          <text x="80" y="412" text-anchor="middle" font-size="7" fill="#999" font-family="sans-serif">footer</text>
+        </svg>
+      </div>
+
+      <!-- DESKTOP -->
+      <div class="wireframe-desktop">
+        <p class="wf-label">Desktop / Tablet (768px+)</p>
+        <svg viewBox="0 0 520 400" xmlns="http://www.w3.org/2000/svg" aria-label="Desktop wireframe of home page">
+          <rect width="520" height="400" rx="6" fill="#f0ece4" stroke="#ccc" stroke-width="1.5"/>
+          <!-- nav -->
+          <rect x="0" y="0" width="520" height="36" rx="4" fill="#C0392B"/>
+          <rect x="16" y="12" width="80" height="10" rx="2" fill="rgba(255,255,255,0.75)"/>
+          <rect x="310" y="14" width="40" height="7" rx="2" fill="white" opacity="0.55"/>
+          <rect x="360" y="14" width="40" height="7" rx="2" fill="white" opacity="0.55"/>
+          <rect x="410" y="14" width="40" height="7" rx="2" fill="white" opacity="0.55"/>
+          <rect x="462" y="14" width="44" height="7" rx="3" fill="#E67E22" opacity="0.9"/>
+          <!-- hero 2-col -->
+          <rect x="12" y="48" width="240" height="110" rx="5" fill="#E67E22" opacity="0.3"/>
+          <rect x="268" y="48" width="240" height="110" rx="5" fill="#ddd"/>
+          <rect x="22" y="62" width="120" height="12" rx="3" fill="#C0392B" opacity="0.65"/>
+          <rect x="22" y="80" width="200" height="7" rx="2" fill="#5C3D11" opacity="0.4"/>
+          <rect x="22" y="91" width="180" height="7" rx="2" fill="#5C3D11" opacity="0.4"/>
+          <rect x="22" y="102" width="160" height="7" rx="2" fill="#5C3D11" opacity="0.4"/>
+          <rect x="22" y="120" width="70" height="14" rx="4" fill="#C0392B" opacity="0.8"/>
+          <!-- section label -->
+          <rect x="12" y="172" width="120" height="8" rx="2" fill="#E67E22" opacity="0.5"/>
+          <!-- 3-col card row 1 -->
+          <rect x="12"  y="188" width="156" height="80" rx="4" fill="#ddd"/>
+          <rect x="182" y="188" width="156" height="80" rx="4" fill="#ddd"/>
+          <rect x="352" y="188" width="156" height="80" rx="4" fill="#ddd"/>
+          <rect x="16"  y="248" width="130" height="6" rx="2" fill="#bbb"/>
+          <rect x="186" y="248" width="130" height="6" rx="2" fill="#bbb"/>
+          <rect x="356" y="248" width="130" height="6" rx="2" fill="#bbb"/>
+          <!-- card row 2 partial -->
+          <rect x="12"  y="278" width="156" height="60" rx="4" fill="#ddd"/>
+          <rect x="182" y="278" width="156" height="60" rx="4" fill="#ddd"/>
+          <!-- dynamic spotlight – dashed -->
+          <rect x="352" y="278" width="156" height="60" rx="4" fill="none" stroke="#E67E22" stroke-dasharray="5,3" stroke-width="1.3"/>
+          <text x="430" y="310" text-anchor="middle" font-size="9" fill="#E67E22" opacity="0.7" font-family="sans-serif">dish of the week</text>
+          <!-- footer -->
+          <rect x="0" y="360" width="520" height="40" rx="0" fill="#1A1209" opacity="0.85"/>
+          <rect x="150" y="374" width="220" height="6" rx="2" fill="white" opacity="0.25"/>
+          <rect x="200" y="384" width="120" height="5" rx="2" fill="white" opacity="0.15"/>
+        </svg>
+      </div>
+
+    </div><!-- /.wireframes -->
+  </section>
+
+</main>
+
+<footer>
+  <p>Lagos Street Food Guide &nbsp;·&nbsp; Website Site Plan &nbsp;·&nbsp; WDD 231 Individual Project</p>
+</footer>
+
+</body>
+</html>
