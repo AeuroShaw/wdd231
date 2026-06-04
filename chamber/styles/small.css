@@ -56,7 +56,8 @@ body {
 
 img { max-width: 100%; display: block; }
 a   { color: var(--green-mid); text-decoration: none; }
-a:hover { text-decoration: underline; color: var(--gold); }
+/* --green-deep on white = 14.7:1 ✅ */
+a:hover { text-decoration: underline; color: var(--green-deep); }
 ul  { list-style: none; }
 
 /* ── HEADER ──────────────────────────────────────── */
@@ -134,16 +135,26 @@ header {
 /* ── NAV ──────────────────────────────────────────── */
 nav {
   position: fixed;
-  top: 66px;
+  top: 66px; /* overridden immediately by shared.js to actual header height */
   left: 0; right: 0;
   background: #0a2012;
-  transform: translateY(-110%);
-  transition: transform .28s cubic-bezier(.4,0,.2,1);
+  /* Hidden state: invisible, no interaction, no layout shift */
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity .22s ease, transform .22s ease, visibility 0s linear .22s;
   z-index: 199;
   box-shadow: var(--shadow-md);
 }
 
-nav.open { transform: translateY(0); }
+nav.open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition: opacity .22s ease, transform .22s ease, visibility 0s linear 0s;
+}
 
 #nav-list {
   padding: .5rem 0;
@@ -411,7 +422,7 @@ main {
 .card-detail .icon { flex-shrink: 0; font-size: .9rem; }
 
 .card-detail a { color: var(--green-mid); font-weight: 600; }
-.card-detail a:hover { color: var(--gold); }
+.card-detail a:hover { color: var(--green-deep); }
 
 .card-footer {
   padding: .6rem 1.2rem .9rem;

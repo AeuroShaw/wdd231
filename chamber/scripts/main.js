@@ -1,45 +1,17 @@
 /* ============================================================
-   Ibadan Chamber – main.js  (home page)
+   Ibadan Chamber – main.js  (home page only)
    Weather via OpenWeatherMap API + Member Spotlights
+   Nav/footer handled by shared.js
    ============================================================ */
 'use strict';
 
-// ── CONFIG ───────────────────────────────────────────────────
-// Get a free API key at https://openweathermap.org/appid
-// Then replace the string below with your key.
 const OWM_KEY = '201985cb7ff18fe73f0c9727b4702584';
-const CITY_ID = '2339354';   // Ibadan, Nigeria (OpenWeatherMap city ID)
-const UNITS   = 'metric';    // Celsius
+const CITY_ID = '2339354';   // Ibadan, Nigeria
+const UNITS   = 'metric';
 
-// ── DOM REFS ─────────────────────────────────────────────────
 const weatherBody    = document.querySelector('.weather-body');
 const forecastBody   = document.querySelector('.forecast-body');
 const spotlightsBody = document.querySelector('.spotlights-body');
-const menuToggle     = document.getElementById('menu-toggle');
-const navList        = document.getElementById('nav-list');
-const copyrightYr    = document.getElementById('copyright-year');
-const lastModified   = document.getElementById('last-modified');
-
-// ── FOOTER META ──────────────────────────────────────────────
-if (copyrightYr)  copyrightYr.textContent  = new Date().getFullYear();
-if (lastModified) lastModified.textContent = document.lastModified;
-
-// ── MOBILE NAV ───────────────────────────────────────────────
-menuToggle?.addEventListener('click', () => {
-  const nav    = menuToggle.nextElementSibling;
-  const isOpen = nav.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded', isOpen);
-  menuToggle.textContent = isOpen ? '✕' : '☰';
-});
-navList?.addEventListener('click', e => {
-  if (e.target.tagName === 'A') {
-    navList.closest('nav')?.classList.remove('open');
-    if (menuToggle) {
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.textContent = '☰';
-    }
-  }
-});
 
 // ── WEATHER HELPERS ──────────────────────────────────────────
 function weatherIcon(code) {
@@ -58,10 +30,6 @@ const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
 // ── CURRENT WEATHER ──────────────────────────────────────────
 async function loadCurrentWeather() {
   if (!weatherBody) return;
-  if (OWM_KEY === 'YOUR_API_KEY') {
-    renderWeatherPlaceholder();
-    return;
-  }
   try {
     const url = `https://api.openweathermap.org/data/2.5/weather?id=${CITY_ID}&units=${UNITS}&appid=${OWM_KEY}`;
     const res = await fetch(url);
@@ -89,38 +57,15 @@ async function loadCurrentWeather() {
   }
 }
 
-function renderWeatherPlaceholder() {
-  weatherBody.innerHTML = `
-    <div class="weather-current">
-      <div class="weather-icon">⛅</div>
-      <div>
-        <div class="weather-temp">32°C</div>
-        <div class="weather-desc">Partly Cloudy</div>
-        <div class="weather-meta">
-          <span>High: 35°C</span><span>Low: 26°C</span>
-          <span>Humidity: 72%</span><span>Sunrise: 6:22am</span>
-          <span>Sunset: 6:48pm</span>
-        </div>
-      </div>
-    </div>`;
-}
-
 // ── 3-DAY FORECAST ───────────────────────────────────────────
-// Uses the free 5-day / 3-hour forecast endpoint.
-// Groups readings by calendar day and picks the daily high.
 async function loadForecast() {
   if (!forecastBody) return;
-  if (OWM_KEY === 'YOUR_API_KEY') {
-    renderForecastPlaceholder();
-    return;
-  }
   try {
     const url = `https://api.openweathermap.org/data/2.5/forecast?id=${CITY_ID}&units=${UNITS}&appid=${OWM_KEY}`;
     const res = await fetch(url);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
 
-    // Group all 3-hour slots by UTC date string, find daily high
     const byDay = {};
     data.list.forEach(item => {
       const dateKey = new Date(item.dt * 1000).toISOString().slice(0, 10);
@@ -129,11 +74,12 @@ async function loadForecast() {
       if (t > byDay[dateKey].max) byDay[dateKey].max = t;
     });
 
-    // Skip today (index 0), take next 3 days
     const today   = new Date().toISOString().slice(0, 10);
     const entries = Object.entries(byDay)
       .filter(([key]) => key > today)
       .slice(0, 3);
+
+    if (entries.length === 0) throw new Error('No forecast data');
 
     forecastBody.innerHTML = entries.map(([, v]) => {
       const label = new Date(v.dt * 1000).toLocaleDateString('en-NG', { weekday: 'long' });
@@ -143,25 +89,18 @@ async function loadForecast() {
               </div>`;
     }).join('');
   } catch {
-    forecastBody.innerHTML = '<p class="weather-loading">Forecast unavailable.</p>';
+    // Fallback: real day names from Date, never hardcoded strings
+    const today = new Date();
+    forecastBody.innerHTML = [1, 2, 3].map(offset => {
+      const d = new Date(today);
+      d.setDate(today.getDate() + offset);
+      const label = d.toLocaleDateString('en-NG', { weekday: 'long' });
+      return `<div class="forecast-row">
+                <span class="day">${label}</span>
+                <span class="temp">—°C</span>
+              </div>`;
+    }).join('');
   }
-}
-
-// Placeholder uses real upcoming day names from Date — never hardcoded strings
-function renderForecastPlaceholder() {
-  const today = new Date();
-  const rows = [1, 2, 3].map(offset => {
-    const d     = new Date(today);
-    d.setDate(today.getDate() + offset);
-    const label = d.toLocaleDateString('en-NG', { weekday: 'long' });
-    // Plausible placeholder temps for Ibadan (warm tropical climate)
-    const temps = [34, 32, 31];
-    return `<div class="forecast-row">
-              <span class="day">${label}</span>
-              <span class="temp">${temps[offset - 1]}°C</span>
-            </div>`;
-  });
-  forecastBody.innerHTML = rows.join('');
 }
 
 // ── SPOTLIGHTS ───────────────────────────────────────────────
@@ -193,7 +132,6 @@ async function loadSpotlights() {
   }
 }
 
-// ── INIT ─────────────────────────────────────────────────────
 loadCurrentWeather();
 loadForecast();
 loadSpotlights();

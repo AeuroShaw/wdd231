@@ -203,7 +203,7 @@
 .spotlight-info h4 { font-size: .88rem; font-weight: 700; color: var(--green-deep); margin-bottom: .2rem; }
 .spotlight-info p  { font-size: .76rem; color: var(--ink-muted); display: flex; align-items: center; gap: .3rem; margin: .1rem 0; }
 .spotlight-info a  { color: var(--green-mid); font-weight: 600; }
-.spotlight-info a:hover { color: var(--gold); }
+.spotlight-info a:hover { color: var(--green-deep); }
 
 /* ── MAIN GRID (mobile first = single col) ──────── */
 main {

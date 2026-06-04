@@ -3,9 +3,7 @@
    Responsibilities:
      • Fetch members.json and render member cards
      • Grid ↔ List view toggle
-     • Mobile nav toggle
-     • Dark mode toggle (persists via localStorage)
-     • Footer: copyright year + last modified
+   Nav/footer handled by shared.js
    ============================================================ */
 
 'use strict';
@@ -15,33 +13,6 @@ const container    = document.getElementById('members-container');
 const memberCount  = document.getElementById('member-count');
 const btnGrid      = document.getElementById('btn-grid');
 const btnList      = document.getElementById('btn-list');
-const menuToggle   = document.getElementById('menu-toggle');
-const navList      = document.getElementById('nav-list');
-const copyrightYr  = document.getElementById('copyright-year');
-const lastModified = document.getElementById('last-modified');
-
-// ── FOOTER META ───────────────────────────────────────────────
-if (copyrightYr)  copyrightYr.textContent  = new Date().getFullYear();
-if (lastModified) lastModified.textContent = document.lastModified;
-
-// ── MOBILE NAV TOGGLE ─────────────────────────────────────────
-if (menuToggle) {
-  menuToggle.addEventListener('click', () => {
-    const nav    = menuToggle.nextElementSibling;  // <nav>
-    const isOpen = nav.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', isOpen);
-    menuToggle.textContent = isOpen ? '✕' : '☰';
-  });
-}
-
-// Close nav when a link is clicked (mobile)
-navList?.addEventListener('click', e => {
-  if (e.target.tagName === 'A') {
-    navList.closest('nav')?.classList.remove('open');
-    menuToggle?.setAttribute('aria-expanded', 'false');
-    if (menuToggle) menuToggle.textContent = '☰';
-  }
-});
 
 // ── VIEW TOGGLE ───────────────────────────────────────────────
 function setView(view) {
