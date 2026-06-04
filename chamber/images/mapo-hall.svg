@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200">
+  <defs>
+    <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a2a3a"/><stop offset="100%" stop-color="#2a4a3a"/></linearGradient>
+  </defs>
+  <rect width="300" height="200" fill="url(#sky2)"/>
+  <ellipse cx="200" cy="50" rx="100" ry="45" fill="#c8860a" opacity="0.10"/>
+  <!-- Hill -->
+  <ellipse cx="150" cy="200" rx="200" ry="80" fill="#0a2015"/>
+  <!-- Base -->
+  <rect x="55" y="110" width="190" height="75" fill="#1a3a28"/>
+  <!-- Columns -->
+  <g fill="#2a5a3a">
+    <rect x="68" y="90" width="10" height="60"/><rect x="85" y="90" width="10" height="60"/>
+    <rect x="102" y="90" width="10" height="60"/><rect x="119" y="90" width="10" height="60"/>
+    <rect x="136" y="90" width="10" height="60"/><rect x="153" y="90" width="10" height="60"/>
+    <rect x="170" y="90" width="10" height="60"/><rect x="187" y="90" width="10" height="60"/>
+    <rect x="204" y="90" width="10" height="60"/><rect x="221" y="90" width="10" height="60"/>
+  </g>
+  <!-- Entablature -->
+  <rect x="55" y="82" width="190" height="12" fill="#2a5a3a"/>
+  <!-- Dome -->
+  <rect x="110" y="44" width="80" height="42" fill="#1e4a30"/>
+  <ellipse cx="150" cy="44" rx="48" ry="26" fill="#c8860a" opacity="0.85"/>
+  <ellipse cx="150" cy="44" rx="34" ry="18" fill="#e8b84b" opacity="0.35"/>
+  <rect x="147" y="14" width="6" height="32" fill="#c8860a"/>
+  <circle cx="150" cy="12" r="5" fill="#e8b84b"/>
+  <!-- Flag -->
+  <rect x="150" y="0" width="2" height="14" fill="#c8860a"/>
+  <rect x="152" y="0" width="14" height="8" fill="#1a8a40"/>
+  <!-- Ground -->
+  <rect x="0" y="160" width="300" height="40" fill="#081808"/>
+  <text x="150" y="185" font-family="Georgia,serif" font-size="11" fill="#c8860a" text-anchor="middle" font-weight="bold">MAPO HALL · IBADAN</text>
+</svg>

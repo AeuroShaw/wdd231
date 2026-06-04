@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200">
+  <defs>
+    <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0f2e1a"/><stop offset="100%" stop-color="#1a4a2a"/></linearGradient>
+    <linearGradient id="bld1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c8860a"/><stop offset="35%" stop-color="#2a5040"/><stop offset="100%" stop-color="#0f2e1a"/></linearGradient>
+  </defs>
+  <rect width="300" height="200" fill="url(#sky1)"/>
+  <ellipse cx="230" cy="40" rx="80" ry="40" fill="#c8860a" opacity="0.12"/>
+  <rect x="50" y="140" width="200" height="60" fill="#081a0e"/>
+  <!-- Tower -->
+  <rect x="118" y="28" width="64" height="155" fill="url(#bld1)"/>
+  <rect x="110" y="115" width="80" height="12" fill="#1a3a28"/>
+  <rect x="106" y="130" width="88" height="10" fill="#1a3a28"/>
+  <!-- Windows grid -->
+  <g fill="#e8b84b" opacity="0.55">
+    <rect x="124" y="36" width="8" height="6"/><rect x="136" y="36" width="8" height="6"/><rect x="148" y="36" width="8" height="6"/><rect x="160" y="36" width="8" height="6"/>
+    <rect x="124" y="48" width="8" height="6"/><rect x="136" y="48" width="8" height="6"/><rect x="148" y="48" width="8" height="6"/><rect x="160" y="48" width="8" height="6"/>
+    <rect x="124" y="60" width="8" height="6"/><rect x="136" y="60" width="8" height="6"/><rect x="148" y="60" width="8" height="6"/><rect x="160" y="60" width="8" height="6"/>
+    <rect x="124" y="72" width="8" height="6"/><rect x="136" y="72" width="8" height="6"/><rect x="148" y="72" width="8" height="6"/><rect x="160" y="72" width="8" height="6"/>
+    <rect x="124" y="84" width="8" height="6"/><rect x="136" y="84" width="8" height="6"/><rect x="148" y="84" width="8" height="6"/><rect x="160" y="84" width="8" height="6"/>
+    <rect x="124" y="96" width="8" height="6"/><rect x="136" y="96" width="8" height="6"/><rect x="148" y="96" width="8" height="6"/><rect x="160" y="96" width="8" height="6"/>
+  </g>
+  <!-- Antenna -->
+  <rect x="148" y="8" width="4" height="22" fill="#e8b84b"/>
+  <circle cx="150" cy="6" r="4" fill="#fff" opacity="0.9"/>
+  <!-- Foreground -->
+  <rect x="0" y="160" width="300" height="40" fill="#081a0e"/>
+  <text x="150" y="185" font-family="Georgia,serif" font-size="11" fill="#c8860a" text-anchor="middle" font-weight="bold">COCOA HOUSE · IBADAN</text>
+</svg>

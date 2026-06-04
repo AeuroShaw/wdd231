@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200">
+  <defs>
+    <linearGradient id="sky7" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a0a28"/><stop offset="100%" stop-color="#2a1a38"/></linearGradient>
+  </defs>
+  <rect width="300" height="200" fill="url(#sky7)"/>
+  <!-- Building -->
+  <rect x="30" y="75" width="240" height="90" fill="#1a2a4a"/>
+  <!-- Columns -->
+  <g fill="#2a3a5a">
+    <rect x="42"  y="60" width="12" height="80"/><rect x="62"  y="60" width="12" height="80"/>
+    <rect x="82"  y="60" width="12" height="80"/><rect x="102" y="60" width="12" height="80"/>
+    <rect x="184" y="60" width="12" height="80"/><rect x="204" y="60" width="12" height="80"/>
+    <rect x="224" y="60" width="12" height="80"/><rect x="244" y="60" width="12" height="80"/>
+  </g>
+  <!-- Pediment -->
+  <polygon points="30,60 150,22 270,60" fill="#1a2a40"/>
+  <polygon points="42,60 150,28 258,60" fill="#2a3a5a"/>
+  <!-- Museum name relief -->
+  <rect x="90" y="40" width="120" height="8" fill="#c8860a" opacity="0.4"/>
+  <!-- Entrance -->
+  <rect x="120" y="115" width="60" height="50" fill="#0a0a18"/>
+  <ellipse cx="150" cy="115" rx="30" ry="15" fill="#0a0a18"/>
+  <!-- Yoruba mask display in window -->
+  <ellipse cx="80"  cy="100" rx="14" ry="17" fill="#c8860a" opacity="0.6"/>
+  <ellipse cx="80"  cy="98"  rx="8"  ry="10" fill="#8a5c00" opacity="0.7"/>
+  <g fill="#f5e8a0" opacity="0.5">
+    <rect x="77" y="96" width="2" height="4"/><rect x="81" y="96" width="2" height="4"/>
+  </g>
+  <ellipse cx="220" cy="100" rx="14" ry="17" fill="#1a8a40" opacity="0.5"/>
+  <!-- Stars -->
+  <g fill="#e8b84b" opacity="0.5">
+    <circle cx="50" cy="25" r="1.2"/><circle cx="120" cy="15" r="1"/><circle cx="200" cy="18" r="1.2"/><circle cx="260" cy="22" r="1"/>
+  </g>
+  <rect x="0" y="160" width="300" height="40" fill="#080810"/>
+  <text x="150" y="185" font-family="Georgia,serif" font-size="10" fill="#c8860a" text-anchor="middle" font-weight="bold">IBADAN NATIONAL MUSEUM · MOKOLA</text>
+</svg>
