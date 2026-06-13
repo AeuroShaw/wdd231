@@ -29,8 +29,12 @@ export function renderCards(foods, container) {
       `<span class="dot${d < food.spiceLevel ? ' hot' : ''}"></span>`
     ).join('');
 
+    const cardTop = food.image
+      ? `<img src="${food.image}" alt="${food.name}" class="card-img" width="400" height="200" loading="lazy">`
+      : `<div class="card-emoji">${food.emoji}</div>`;
+
     card.innerHTML = `
-      <div class="card-emoji">${food.emoji}</div>
+      ${cardTop}
       <div class="card-body">
         <p class="card-category">${food.category}</p>
         <h3 class="card-name">${food.name}</h3>

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Chin Chin - Nigerian fried pastry snack">
+  <defs>
+    <radialGradient id="cc-bowl" cx="45%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E8D5B0"/>
+    </radialGradient>
+    <linearGradient id="cc-piece" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E8B84B"/>
+      <stop offset="100%" stop-color="#C07820"/>
+    </linearGradient>
+    <linearGradient id="cc-dark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C07820"/>
+      <stop offset="100%" stop-color="#8B4A10"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="300" fill="#1A1209" rx="12"/>
+
+  <!-- Bowl shadow -->
+  <ellipse cx="200" cy="240" rx="130" ry="22" fill="#0D0804" opacity="0.6"/>
+
+  <!-- Bowl body -->
+  <path d="M75,175 Q75,255 200,260 Q325,255 325,175 Z" fill="url(#cc-bowl)"/>
+  <!-- Bowl rim -->
+  <ellipse cx="200" cy="175" rx="125" ry="28" fill="#F0E0C0"/>
+  <ellipse cx="200" cy="173" rx="120" ry="25" fill="#FFFAF4"/>
+  <!-- Bowl inner shadow -->
+  <ellipse cx="200" cy="210" rx="105" ry="35" fill="#E8D0A0" opacity="0.4"/>
+
+  <!-- Chin chin pieces — varied rectangles and strips -->
+  <!-- Back layer -->
+  <g fill="url(#cc-dark)" opacity="0.85">
+    <rect x="135" y="182" width="22" height="12" rx="3" transform="rotate(-25,135,182)"/>
+    <rect x="165" y="178" width="20" height="11" rx="3" transform="rotate(10,165,178)"/>
+    <rect x="192" y="176" width="24" height="12" rx="3" transform="rotate(-5,192,176)"/>
+    <rect x="222" y="179" width="21" height="11" rx="3" transform="rotate(20,222,179)"/>
+    <rect x="250" y="183" width="22" height="12" rx="3" transform="rotate(-15,250,183)"/>
+  </g>
+
+  <!-- Middle layer -->
+  <g fill="url(#cc-piece)">
+    <rect x="125" y="196" width="25" height="13" rx="3" transform="rotate(15,125,196)"/>
+    <rect x="152" y="192" width="22" height="12" rx="3" transform="rotate(-20,152,192)"/>
+    <rect x="178" y="190" width="26" height="13" rx="3" transform="rotate(8,178,190)"/>
+    <rect x="206" y="191" width="23" height="12" rx="3" transform="rotate(-12,206,191)"/>
+    <rect x="233" y="193" width="25" height="13" rx="3" transform="rotate(18,233,193)"/>
+    <rect x="260" y="197" width="22" height="12" rx="3" transform="rotate(-8,260,197)"/>
+  </g>
+
+  <!-- Front layer -->
+  <g fill="url(#cc-piece)">
+    <rect x="130" y="212" width="26" height="14" rx="3" transform="rotate(-18,130,212)"/>
+    <rect x="158" y="208" width="24" height="13" rx="3" transform="rotate(12,158,208)"/>
+    <rect x="185" y="207" width="28" height="14" rx="3" transform="rotate(-6,185,207)"/>
+    <rect x="214" y="208" width="25" height="13" rx="3" transform="rotate(15,214,208)"/>
+    <rect x="242" y="211" width="26" height="14" rx="3" transform="rotate(-20,242,211)"/>
+  </g>
+
+  <!-- Top layer scattered -->
+  <g fill="url(#cc-piece)">
+    <rect x="155" y="200" width="20" height="11" rx="3" transform="rotate(30,155,200)"/>
+    <rect x="195" y="197" width="22" height="12" rx="3" transform="rotate(-25,195,197)"/>
+    <rect x="230" y="201" width="19" height="11" rx="3" transform="rotate(10,230,201)"/>
+  </g>
+
+  <!-- Dark spots (fried texture) -->
+  <g fill="#8B4A10" opacity="0.5">
+    <circle cx="138" cy="185" r="2"/><circle cx="168" cy="181" r="1.5"/>
+    <circle cx="198" cy="179" r="2"/><circle cx="228" cy="182" r="1.5"/>
+    <circle cx="255" cy="186" r="2"/>
+    <circle cx="132" cy="199" r="2"/><circle cx="162" cy="195" r="1.5"/>
+    <circle cx="192" cy="194" r="2"/><circle cx="220" cy="195" r="1.5"/>
+    <circle cx="248" cy="198" r="2"/>
+  </g>
+
+  <!-- Scattered pieces outside bowl -->
+  <g fill="url(#cc-dark)" opacity="0.7">
+    <rect x="60"  y="195" width="18" height="10" rx="2" transform="rotate(-30,60,195)"/>
+    <rect x="318" y="198" width="17" height="10" rx="2" transform="rotate(25,318,198)"/>
+    <rect x="82"  y="218" width="15" height="9"  rx="2" transform="rotate(15,82,218)"/>
+    <rect x="300" y="220" width="16" height="9"  rx="2" transform="rotate(-20,300,220)"/>
+  </g>
+
+  <!-- Paper bag suggestion -->
+  <path d="M55,155 Q52,165 55,240 Q58,248 78,250 Q98,252 100,240 L103,160 Z" fill="#F5DEB3" opacity="0.15"/>
+
+  <text x="200" y="272" text-anchor="middle" font-family="Georgia,serif" font-size="18" font-weight="bold" fill="#F5DEB3" letter-spacing="2">CHIN CHIN</text>
+  <text x="200" y="288" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#E67E22" letter-spacing="1">Fried Pastry Snack</text>
+</svg>

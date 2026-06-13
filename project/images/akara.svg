@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Akara - Nigerian fried bean cakes">
+  <defs>
+    <radialGradient id="ak-plate" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F0E8DB"/>
+    </radialGradient>
+    <radialGradient id="ak-ball" cx="35%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#E8A838"/>
+      <stop offset="60%" stop-color="#C07820"/>
+      <stop offset="100%" stop-color="#8B4A10"/>
+    </radialGradient>
+    <radialGradient id="ak-oil" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E67E22" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#C0392B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="300" fill="#1A1209" rx="12"/>
+
+  <!-- Plate -->
+  <ellipse cx="200" cy="200" rx="155" ry="55" fill="#2C1A0E" opacity="0.5"/>
+  <ellipse cx="200" cy="195" rx="150" ry="50" fill="url(#ak-plate)"/>
+  <ellipse cx="200" cy="193" rx="140" ry="44" fill="#FFFAF4"/>
+
+  <!-- Oil sheen on plate -->
+  <ellipse cx="200" cy="193" rx="140" ry="44" fill="url(#ak-oil)"/>
+
+  <!-- Pepper garnish on plate -->
+  <g fill="#C0392B" opacity="0.7">
+    <circle cx="120" cy="198" r="3"/><circle cx="130" cy="202" r="2"/>
+    <circle cx="270" cy="196" r="3"/><circle cx="260" cy="201" r="2"/>
+    <circle cx="200" cy="205" r="2.5"/>
+  </g>
+  <g fill="#27AE60" opacity="0.6">
+    <ellipse cx="115" cy="195" rx="5" ry="2" transform="rotate(-20,115,195)"/>
+    <ellipse cx="285" cy="197" rx="5" ry="2" transform="rotate(15,285,197)"/>
+  </g>
+
+  <!-- Akara balls — back row -->
+  <g>
+    <circle cx="145" cy="168" r="32" fill="#7B3A08" opacity="0.4"/>
+    <circle cx="145" cy="165" r="32" fill="url(#ak-ball)"/>
+    <circle cx="135" cy="155" r="10" fill="#E8A838" opacity="0.4"/>
+    <!-- crack detail -->
+    <path d="M148,148 Q152,155 150,165 Q148,172 152,178" fill="none" stroke="#7B3A08" stroke-width="1.5" opacity="0.6"/>
+  </g>
+  <g>
+    <circle cx="200" cy="162" r="32" fill="#7B3A08" opacity="0.4"/>
+    <circle cx="200" cy="159" r="32" fill="url(#ak-ball)"/>
+    <circle cx="190" cy="149" r="10" fill="#E8A838" opacity="0.4"/>
+    <path d="M203,142 Q207,149 205,159 Q203,166 207,172" fill="none" stroke="#7B3A08" stroke-width="1.5" opacity="0.6"/>
+  </g>
+  <g>
+    <circle cx="255" cy="168" r="32" fill="#7B3A08" opacity="0.4"/>
+    <circle cx="255" cy="165" r="32" fill="url(#ak-ball)"/>
+    <circle cx="245" cy="155" r="10" fill="#E8A838" opacity="0.4"/>
+    <path d="M258,148 Q262,155 260,165 Q258,172 262,178" fill="none" stroke="#7B3A08" stroke-width="1.5" opacity="0.6"/>
+  </g>
+
+  <!-- Akara balls — front row -->
+  <g>
+    <circle cx="168" cy="192" r="34" fill="#7B3A08" opacity="0.4"/>
+    <circle cx="168" cy="189" r="34" fill="url(#ak-ball)"/>
+    <circle cx="156" cy="177" r="11" fill="#E8A838" opacity="0.4"/>
+    <path d="M172,170 Q177,178 175,189 Q173,197 177,204" fill="none" stroke="#7B3A08" stroke-width="1.5" opacity="0.6"/>
+  </g>
+  <g>
+    <circle cx="232" cy="192" r="34" fill="#7B3A08" opacity="0.4"/>
+    <circle cx="232" cy="189" r="34" fill="url(#ak-ball)"/>
+    <circle cx="220" cy="177" r="11" fill="#E8A838" opacity="0.4"/>
+    <path d="M236,170 Q241,178 239,189 Q237,197 241,204" fill="none" stroke="#7B3A08" stroke-width="1.5" opacity="0.6"/>
+  </g>
+
+  <!-- Steam -->
+  <g fill="none" stroke="#FDF6EC" stroke-width="1.5" stroke-linecap="round" opacity="0.18">
+    <path d="M145,133 Q142,120 146,109 Q149,100 145,90"/>
+    <path d="M200,127 Q197,114 201,103 Q204,94 200,84"/>
+    <path d="M255,133 Q252,120 256,109 Q259,100 255,90"/>
+    <path d="M168,155 Q165,142 169,131 Q172,122 168,112"/>
+    <path d="M232,155 Q229,142 233,131 Q236,122 232,112"/>
+  </g>
+
+  <!-- Label -->
+  <text x="200" y="268" text-anchor="middle" font-family="Georgia,serif" font-size="18" font-weight="bold" fill="#F5DEB3" letter-spacing="2">AKARA</text>
+  <text x="200" y="284" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#E67E22" letter-spacing="1">Fried Bean Cakes</text>
+</svg>

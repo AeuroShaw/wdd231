@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Moi Moi - Nigerian steamed bean pudding">
+  <defs>
+    <linearGradient id="mm-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C07820"/>
+      <stop offset="100%" stop-color="#8B4A10"/>
+    </linearGradient>
+    <radialGradient id="mm-sheen" cx="35%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="#E8A838" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#C07820" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mm-leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#27AE60"/>
+      <stop offset="100%" stop-color="#1E8449"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="300" fill="#1A1209" rx="12"/>
+
+  <!-- Banana leaf wrapper — back -->
+  <ellipse cx="200" cy="210" rx="120" ry="25" fill="#1E8449" opacity="0.6"/>
+
+  <!-- Moi Moi cylinder body -->
+  <ellipse cx="200" cy="175" rx="100" ry="30" fill="#8B4A10"/>
+  <rect x="100" y="175" width="200" height="60" fill="url(#mm-body)"/>
+  <ellipse cx="200" cy="235" rx="100" ry="28" fill="#6B3008"/>
+
+  <!-- Leaf wrapping lines -->
+  <g stroke="#1E8449" stroke-width="2.5" fill="none" opacity="0.8">
+    <line x1="120" y1="175" x2="118" y2="235"/>
+    <line x1="150" y1="178" x2="148" y2="237"/>
+    <line x1="180" y1="179" x2="178" y2="238"/>
+    <line x1="210" y1="179" x2="208" y2="238"/>
+    <line x1="240" y1="178" x2="238" y2="237"/>
+    <line x1="270" y1="176" x2="268" y2="236"/>
+    <line x1="295" y1="174" x2="293" y2="234"/>
+  </g>
+
+  <!-- Top face of moi moi -->
+  <ellipse cx="200" cy="175" rx="100" ry="30" fill="url(#mm-body)"/>
+  <ellipse cx="200" cy="175" rx="100" ry="30" fill="url(#mm-sheen)"/>
+
+  <!-- Egg cross-section on top -->
+  <ellipse cx="200" cy="172" rx="22" ry="16" fill="#F5DEB3"/>
+  <ellipse cx="200" cy="172" rx="12" ry="9"  fill="#E67E22"/>
+  <ellipse cx="200" cy="171" rx="5"  ry="4"  fill="#C0392B"/>
+
+  <!-- Fish pieces visible on top -->
+  <g fill="#5C3D11" opacity="0.7">
+    <ellipse cx="155" cy="170" rx="12" ry="6" transform="rotate(-15,155,170)"/>
+    <ellipse cx="248" cy="169" rx="11" ry="5" transform="rotate(10,248,169)"/>
+    <ellipse cx="175" cy="180" rx="8"  ry="4" transform="rotate(-5,175,180)"/>
+    <ellipse cx="228" cy="179" rx="9"  ry="4" transform="rotate(8,228,179)"/>
+  </g>
+
+  <!-- Banana leaf pieces -->
+  <path d="M90,215 Q100,200 120,210 Q110,225 90,215Z" fill="url(#mm-leaf)" opacity="0.8"/>
+  <path d="M310,213 Q300,198 280,208 Q290,223 310,213Z" fill="url(#mm-leaf)" opacity="0.8"/>
+  <!-- Leaf veins -->
+  <line x1="95" y1="213" x2="118" y2="208" stroke="#1A5E35" stroke-width="1" opacity="0.6"/>
+  <line x1="305" y1="211" x2="282" y2="206" stroke="#1A5E35" stroke-width="1" opacity="0.6"/>
+
+  <!-- Steam -->
+  <g fill="none" stroke="#FDF6EC" stroke-width="1.5" stroke-linecap="round" opacity="0.2">
+    <path d="M170,145 Q167,132 171,121 Q174,112 170,102"/>
+    <path d="M200,140 Q197,127 201,116 Q204,107 200,97"/>
+    <path d="M230,145 Q227,132 231,121 Q234,112 230,102"/>
+  </g>
+
+  <!-- Second moi moi behind — partly visible -->
+  <ellipse cx="320" cy="195" rx="65" ry="20" fill="#6B3008" opacity="0.7"/>
+  <rect x="255" y="195" width="130" height="38" fill="#7B3A08" opacity="0.6"/>
+  <ellipse cx="320" cy="195" rx="65" ry="20" fill="#8B4A10" opacity="0.5"/>
+
+  <text x="200" y="272" text-anchor="middle" font-family="Georgia,serif" font-size="18" font-weight="bold" fill="#F5DEB3" letter-spacing="2">MOI MOI</text>
+  <text x="200" y="288" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#E67E22" letter-spacing="1">Steamed Bean Pudding</text>
+</svg>
