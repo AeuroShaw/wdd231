@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lagos Street Food Guide – West Africa's Greatest Street Food</title>
+  <meta name="description" content="Your essential guide to Lagos street food. Explore 17 iconic dishes, discover the best spots by neighbourhood, and eat like a true Lagosian." />
+  <meta name="author" content="Eyuro Foluso" />
+  <meta property="og:title"       content="Lagos Street Food Guide" />
+  <meta property="og:description" content="Explore iconic Lagos dishes, local vendors, and street food culture." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://yourusername.github.io/wdd231/chamber/" />
+  <meta property="og:image"       content="https://yourusername.github.io/wdd231/chamber/images/hero-ibadan.svg" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍢</text></svg>" />
+  <link rel="stylesheet" href="styles/small.css" />
+  <link rel="stylesheet" href="styles/larger.css" />
+  <link rel="stylesheet" href="styles/home.css" />
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="Lagos Street Food Guide home">Lagos<span>Food</span></a>
+    <button id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav aria-label="Primary navigation">
+      <ul id="primary-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">All Dishes</a></li>
+        <li><a href="discover.html">Culture &amp; Tips</a></li>
+        <li><a href="join.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-label="Welcome banner">
+  <div class="hero-inner">
+    <div>
+      <span class="hero-tag">🇳🇬 Lagos, Nigeria</span>
+      <h1>The <em>Street Food</em> Capital of West Africa</h1>
+      <p class="hero-lead">From sizzling suya to smoky boli, Lagos street food is a full sensory experience. Discover 17 essential dishes, find the best spots, and eat like a true Lagosian.</p>
+      <div class="hero-cta">
+        <a href="directory.html" class="btn">Explore All Dishes</a>
+        <a href="discover.html" class="btn btn-ghost">Culture &amp; Tips</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">🍢</div>
+  </div>
+</section>
+
+<!-- FEATURE STRIP -->
+<div class="feature-strip" aria-label="Site highlights">
+  <div class="feature-strip-inner">
+    <div class="feature-item"><strong>17</strong><span>Iconic Dishes</span></div>
+    <div class="feature-item"><strong>9+</strong><span>Neighbourhoods</span></div>
+    <div class="feature-item"><strong>∞</strong><span>Flavour Stories</span></div>
+  </div>
+</div>
+
+<main id="main-content">
+
+  <!-- DISH OF THE WEEK -->
+  <div class="wrap" id="dotw-section">
+    <div class="section-head">
+      <h2>Dish of the Week</h2>
+      <p>Our rotating spotlight on one essential Lagos bite.</p>
+    </div>
+    <div class="dotw-card">
+      <div class="dotw-emoji" id="dotw-emoji">🍢</div>
+      <div>
+        <p class="dotw-label">This Week's Pick</p>
+        <h3 class="dotw-name" id="dotw-name">Loading…</h3>
+        <p class="dotw-desc"  id="dotw-desc"></p>
+        <div class="dotw-meta">
+          <span>💰 <span id="dotw-price"></span></span>
+          <span>📍 <span id="dotw-area"></span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAVOURITES BAR -->
+  <div class="wrap" style="padding-top:0; padding-bottom:0;">
+    <div class="favs-bar" aria-label="Your saved favourite dishes">
+      <strong>♥ Favourites:</strong>
+      <div id="fav-list"></div>
+    </div>
+  </div>
+
+  <!-- FEATURED GRID -->
+  <section class="wrap" aria-labelledby="featured-heading">
+    <div class="section-head">
+      <h2 id="featured-heading">Featured Dishes</h2>
+      <p>Click any dish card to see full details and save to your favourites.</p>
+    </div>
+    <div class="cards-grid" id="home-grid" aria-live="polite" aria-label="Featured Lagos street food dishes"></div>
+    <div class="home-grid-footer">
+      <a href="directory.html" class="btn">See All 17 Dishes →</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- MODAL -->
+<div id="modal-backdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Dish details">
+  <div class="modal">
+    <div class="modal-head"></div>
+    <div class="modal-body"></div>
+  </div>
+</div>
+
+<div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<footer>
+  <nav class="footer-links" aria-label="Footer navigation">
+    <a href="index.html">Home</a>
+    <a href="directory.html">All Dishes</a>
+    <a href="discover.html">Culture &amp; Tips</a>
+    <a href="join.html">Contact</a>
+    <a href="attributions.html">Attributions</a>
+  </nav>
+  <p><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">📽 Project Demo Video</a></p>
+  <p style="opacity:.45; margin-top:.35rem;">&copy; 2025 Eyuro Foluso · WDD 231 Individual Project</p>
+</footer>
+
+<script type="module" src="scripts/main.js"></script>
+</body>
+</html>

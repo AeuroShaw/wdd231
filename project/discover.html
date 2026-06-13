@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Culture &amp; Tips – Lagos Street Food Guide</title>
+  <meta name="description" content="Learn the history, etiquette, and insider tips for navigating Lagos street food culture. When to eat, what to try first, and how to eat like a local." />
+  <meta name="author" content="Eyuro Foluso" />
+  <meta property="og:title"       content="Culture &amp; Tips – Lagos Street Food Guide" />
+  <meta property="og:description" content="Insider knowledge on Lagos street food: history, etiquette, best times, and tips for first-time visitors." />
+  <meta property="og:type"        content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍢</text></svg>" />
+  <link rel="stylesheet" href="styles/small.css" />
+  <link rel="stylesheet" href="styles/larger.css" />
+  <link rel="stylesheet" href="styles/discover.css" />
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="Lagos Street Food Guide home">Lagos<span>Food</span></a>
+    <button id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav aria-label="Primary navigation">
+      <ul id="primary-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">All Dishes</a></li>
+        <li><a href="discover.html">Culture &amp; Tips</a></li>
+        <li><a href="join.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="page-banner discover-banner">
+  <div class="page-banner-inner">
+    <div>
+      <h1>🌍 Culture &amp; Tips</h1>
+      <p>The stories, etiquette, and insider knowledge behind Lagos street food.</p>
+    </div>
+    <button id="reading-toggle" class="reading-toggle" aria-label="Toggle reading mode">🌙 Reading Mode</button>
+  </div>
+</div>
+
+<main id="main-content">
+  <div class="wrap">
+
+    <!-- Visit banner (localStorage) -->
+    <div class="visit-banner" id="visit-banner" aria-live="polite">
+      <span>👋</span> <span>Loading visit info…</span>
+    </div>
+
+    <!-- History -->
+    <div class="history-block" aria-label="History of Lagos street food">
+      <h2>A City Built on Street Food</h2>
+      <p>Lagos street food is inseparable from the rhythm of the city itself. For centuries, hawkers and roadside vendors have been the backbone of how millions of Lagosians eat — from the early-morning Akara seller outside a school gate to the late-night Suya mallam with his glowing charcoal grill on a busy junction.</p>
+      <p>Rooted in Yoruba, Igbo, and Hausa culinary traditions, Lagos street food is one of Nigeria's greatest cultural crossroads. Dishes like Pepper Soup carry the medicinal wisdom of generations; Puff Puff and Chin Chin reflect the ingenuity of stretching simple ingredients into something joyful.</p>
+      <p>Today Lagos street food is global — celebrated by food writers, chefs, and diaspora communities from London to Toronto — yet it remains fundamentally, defiantly local.</p>
+    </div>
+
+    <!-- Culture cards (JS-rendered from attractions.mjs) -->
+    <div class="section-head">
+      <h2>Etiquette &amp; Culture</h2>
+      <p>Eight things every Lagos street food eater should know.</p>
+    </div>
+    <div class="culture-grid" id="culture-grid" aria-live="polite"></div>
+
+    <!-- Neighbourhood table -->
+    <div class="section-head">
+      <h2>Neighbourhood Guide</h2>
+      <p>Where to go for what across Lagos.</p>
+    </div>
+    <div class="nbhd-wrap">
+      <table class="nbhd-table" aria-label="Lagos neighbourhoods and their street food specialties">
+        <thead>
+          <tr><th scope="col">Neighbourhood</th><th scope="col">Known For</th></tr>
+        </thead>
+        <tbody id="nbhd-tbody"></tbody>
+      </table>
+    </div>
+
+    <!-- Insider tips -->
+    <div class="section-head">
+      <h2>Insider Tips</h2>
+      <p>Hard-won advice from people who eat this way every day.</p>
+    </div>
+    <ul class="tips-list" aria-label="Insider street food tips">
+      <li>Always try a small portion first before committing to a full plate.</li>
+      <li>The best Suya spots are often away from main roads — follow the smoke.</li>
+      <li>Morning Akara is always better fresh. If it's been sitting, skip it.</li>
+      <li>Eba and Egusi from a bukas (roadside eatery) will almost always beat restaurant versions.</li>
+      <li>Boli paired with ube (African pear) is seasonal — worth timing your visit for it.</li>
+      <li>Ask locals: "Where do you eat?" They will never steer you wrong.</li>
+    </ul>
+
+    <!-- FAQ accordion (JS-rendered) -->
+    <div class="section-head">
+      <h2>Common Questions</h2>
+    </div>
+    <div id="faq-container" aria-label="Frequently asked questions"></div>
+
+  </div>
+</main>
+
+<div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<footer>
+  <nav class="footer-links" aria-label="Footer navigation">
+    <a href="index.html">Home</a>
+    <a href="directory.html">All Dishes</a>
+    <a href="discover.html">Culture &amp; Tips</a>
+    <a href="join.html">Contact</a>
+    <a href="attributions.html">Attributions</a>
+  </nav>
+  <p><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">📽 Project Demo Video</a></p>
+  <p style="opacity:.45; margin-top:.35rem;">&copy; 2025 Eyuro Foluso · WDD 231 Individual Project</p>
+</footer>
+
+<script type="module" src="scripts/discover.mjs"></script>
+</body>
+</html>

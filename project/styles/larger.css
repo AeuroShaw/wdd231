@@ -1,0 +1,74 @@
+/* ============================================
+   Lagos Street Food Guide
+   styles/larger.css — breakpoint enhancements
+   ============================================ */
+
+/* ── NAV: horizontal at ≥640px ── */
+@media (min-width: 640px) {
+  #menu-toggle { display: none; }
+
+  nav ul {
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    background: none;
+    border: none;
+    padding: 0;
+    gap: .05rem;
+  }
+
+  nav a[aria-current="page"] {
+    border-left: none;
+    padding-left: .7rem;
+    border-bottom: 2px solid var(--orange);
+    padding-bottom: calc(.55rem - 2px);
+  }
+}
+
+/* ── CARDS: 2-col at ≥480px ── */
+@media (min-width: 480px) {
+  .cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── CARDS: 3-col at ≥820px ── */
+@media (min-width: 820px) {
+  .cards-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ── CONTROLS: side-by-side at ≥600px ── */
+@media (min-width: 600px) {
+  .controls { flex-direction: row; align-items: flex-end; justify-content: space-between; }
+  .controls-left { display: flex; flex-direction: column; gap: .6rem; }
+}
+
+/* ── CULTURE GRID: 2-col at ≥640px ── */
+@media (min-width: 640px) {
+  .culture-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── CULTURE GRID: 4-col at ≥1000px ── */
+@media (min-width: 1000px) {
+  .culture-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ── LARGER WRAP PADDING ── */
+@media (min-width: 768px) {
+  .wrap { padding: 3.5rem 2rem; }
+  .form-card { padding: 2.25rem 2rem; }
+}
+
+/* ── MODAL DETAILS: wider chips ── */
+@media (min-width: 420px) {
+  .modal-details { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── HERO specific layout ── */
+@media (min-width: 680px) {
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 2rem;
+  }
+  .hero-visual { font-size: clamp(5rem, 12vw, 8.5rem); }
+}

@@ -1,0 +1,80 @@
+/* ============================================
+   Lagos Street Food Guide
+   styles/discover.css — discover.html only
+   ============================================ */
+
+.discover-banner { background: linear-gradient(135deg, #1A1209 0%, #5C3D11 100%); }
+
+/* reading mode toggle */
+.reading-toggle {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,.35);
+  color: #fff;
+  font-size: .82rem;
+  padding: .4rem .85rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: background var(--transition), border-color var(--transition);
+}
+.reading-toggle:hover         { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.6); }
+.reading-toggle:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+
+body.reading-dark { filter: brightness(.87) sepia(.12); }
+
+/* history block */
+.history-block {
+  background: var(--dark);
+  color: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 1.85rem 1.6rem;
+  margin-bottom: 2.5rem;
+}
+.history-block h2 { font-family: var(--font-display); color: var(--orange); font-size: 1.55rem; margin-bottom: .75rem; }
+.history-block p  { color: rgba(253,246,236,.78); margin-bottom: .65rem; font-size: .94rem; line-height: 1.8; }
+.history-block p:last-child { margin-bottom: 0; }
+
+/* neighbourhood table wrapper */
+.nbhd-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* tips list */
+.tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  margin-bottom: 2.5rem;
+}
+.tips-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+  font-size: .93rem;
+  color: var(--brown);
+}
+.tips-list li::before {
+  content: '✓';
+  color: var(--green);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: .15rem;
+}
+
+/* visit counter banner */
+.visit-banner {
+  background: var(--soft);
+  border-radius: var(--radius-lg);
+  padding: 1.1rem 1.4rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-size: .9rem;
+  color: var(--brown);
+}
+.visit-banner strong { color: var(--red); }
