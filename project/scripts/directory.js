@@ -1,8 +1,9 @@
 // scripts/directory.js
-// All-dishes page: fetch, render, filter, search, modal
-// Also exports renderCards + openModal for use by main.js
+// All-dishes page: render, filter, search, modal
+// Exports renderCards + openModal for use by main.js
 
 import { initNav, renderFavourites, saveFavourite, showToast } from './shared.js';
+import { foods as foodData } from './foods.js';
 
 let allFoods = [];
 
@@ -49,7 +50,7 @@ export function renderCards(foods, container) {
   });
 }
 
-// ── Modal (exported for home page reuse) ──────────────────────
+// ── Modal ──────────────────────────────────────────────────────
 export function openModal(food) {
   const backdrop = document.getElementById('modal-backdrop');
   if (!backdrop) return;
@@ -109,7 +110,7 @@ export function closeModal() {
   if (backdrop) backdrop.classList.remove('open');
 }
 
-// Global modal-close handlers
+// Close on backdrop click or ESC
 document.addEventListener('click', e => {
   const backdrop = document.getElementById('modal-backdrop');
   if (backdrop && e.target === backdrop) closeModal();
@@ -124,9 +125,14 @@ if (dirGrid) {
   initNav();
   renderFavourites();
 
-  const searchInput  = document.getElementById('search-input');
-  const resultCount  = document.getElementById('result-count');
+  const searchInput = document.getElementById('search-input');
+  const resultCount = document.getElementById('result-count');
   let timeFilter = 'all';
+
+  // Load data from the imported module — no fetch needed
+  allFoods = foodData;
+  renderCards(allFoods, dirGrid);
+  if (resultCount) resultCount.textContent = `${allFoods.length} dishes found`;
 
   function applyFilters() {
     const q = (searchInput?.value || '').toLowerCase().trim();
@@ -143,20 +149,6 @@ if (dirGrid) {
     if (resultCount) resultCount.textContent = `${filtered.length} dish${filtered.length !== 1 ? 'es' : ''} found`;
   }
 
-  async function loadAllDishes() {
-    try {
-      const jsonUrl = new URL('members.json', import.meta.url).href;
-      const res = await fetch(jsonUrl);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      allFoods = await res.json();
-      renderCards(allFoods, dirGrid);
-      if (resultCount) resultCount.textContent = `${allFoods.length} dishes found`;
-    } catch (err) {
-      dirGrid.innerHTML = `<p class="notice">Could not load dishes. ${err.message}</p>`;
-      console.error('loadAllDishes:', err);
-    }
-  }
-
   searchInput?.addEventListener('input', applyFilters);
 
   document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -167,6 +159,4 @@ if (dirGrid) {
       applyFilters();
     });
   });
-
-  loadAllDishes();
 }
