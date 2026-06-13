@@ -145,7 +145,8 @@ if (dirGrid) {
 
   async function loadAllDishes() {
     try {
-      const res = await fetch('./scripts/members.json');
+      const jsonUrl = new URL('members.json', import.meta.url).href;
+      const res = await fetch(jsonUrl);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       allFoods = await res.json();
       renderCards(allFoods, dirGrid);

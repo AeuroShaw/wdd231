@@ -12,7 +12,8 @@ const homeGrid = document.getElementById('home-grid');
 
 async function loadFeatured() {
   try {
-    const res = await fetch('./scripts/members.json');
+    const jsonUrl = new URL('members.json', import.meta.url).href;
+    const res = await fetch(jsonUrl);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const foods = await res.json();
     // Show first 6 on home page
@@ -26,7 +27,8 @@ async function loadFeatured() {
 // ── Dish of the Week ───────────────────────────────────────────
 async function loadDishOfWeek() {
   try {
-    const res = await fetch('./scripts/members.json');
+    const jsonUrl = new URL('members.json', import.meta.url).href;
+    const res = await fetch(jsonUrl);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const foods = await res.json();
 
