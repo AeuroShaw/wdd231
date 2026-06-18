@@ -104,13 +104,13 @@
 .dotw-desc      { color: rgba(245,222,179,.72); font-size: .91rem; margin-bottom: .65rem; }
 .dotw-meta      { display: flex; gap: 1.1rem; font-size: .83rem; color: var(--orange); flex-wrap: wrap; }
 
-/* ── HOME GRID: limited to 6 cards ── */
-#home-grid .food-card:nth-child(n+7) { display: none; }
-
-@media (min-width: 480px) {
-  #home-grid .food-card:nth-child(n+7) { display: flex; }
-  #home-grid .food-card:nth-child(n+7):nth-child(-n+9) { display: flex; }
-  /* show up to 9 on wider screens via JS override */
-}
-
 .home-grid-footer { text-align: center; margin-top: 1.75rem; }
+
+/* ── HERO IMAGE ── */
+.hero-visual img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}

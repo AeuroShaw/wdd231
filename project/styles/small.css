@@ -10,6 +10,8 @@
   --red:        #C0392B;
   --red-dark:   #922B21;
   --orange:     #E67E22;
+  --orange-text: #A04A0C; /* AA-safe orange for text on light backgrounds */
+  --orange-text: #A0440D; /* AA-compliant orange for light backgrounds (6.3:1 on white) */
   --cream:      #FDF6EC;
   --dark:       #1A1209;
   --brown:      #5C3D11;
@@ -96,11 +98,14 @@ header {
   background: none;
   border: none;
   cursor: pointer;
-  padding: .4rem;
+  padding: .7rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 5px;
   flex-shrink: 0;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: var(--radius);
 }
 #menu-toggle span {
@@ -207,7 +212,7 @@ main { flex: 1; }
 
 .btn-ghost {
   background: transparent;
-  color: var(--orange);
+  color: var(--orange-text);
   border-color: var(--orange);
 }
 .btn-ghost:hover { background: var(--orange); color: #fff; border-color: var(--orange); }
@@ -251,14 +256,7 @@ main { flex: 1; }
   display: flex;
   flex-direction: column;
 }
-.card-category {
-  font-size: .72rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .07em;
-  color: var(--orange);
-  margin-bottom: .2rem;
-}
+  color: var(--orange-text);
 .card-name {
   font-family: var(--font-display);
   font-size: 1.15rem;
@@ -283,7 +281,7 @@ main { flex: 1; }
   font-size: .82rem;
 }
 .card-price  { font-weight: 600; color: var(--red); }
-.card-rating { color: var(--orange); font-weight: 600; }
+.card-rating { color: var(--orange-text); font-weight: 600; }
 
 .spice-dots { display: flex; gap: 3px; align-items: center; }
 .dot {
@@ -379,7 +377,7 @@ main { flex: 1; }
   font-size: .68rem;
   text-transform: uppercase;
   letter-spacing: .06em;
-  color: var(--orange);
+  color: var(--orange-text);
   margin-bottom: .2rem;
 }
 .detail-chip span { font-size: .88rem; color: var(--dark); font-weight: 500; }
@@ -431,13 +429,14 @@ main { flex: 1; }
   color: var(--brown);
   font-size: .8rem;
   font-weight: 500;
-  padding: .3rem .8rem;
+  padding: .55rem .9rem;
   border-radius: 99px;
   cursor: pointer;
   transition: all var(--transition);
+  min-height: 40px;
 }
-.filter-btn:hover  { border-color: var(--orange); color: var(--orange); }
-.filter-btn.active { background: var(--orange); border-color: var(--orange); color: #fff; }
+.filter-btn:hover  { border-color: var(--orange); color: var(--orange-text); }
+.filter-btn.active { background: var(--red); border-color: var(--red); color: #fff; }
 .filter-btn:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
 
 .result-count { font-size: .83rem; color: var(--brown); font-weight: 500; align-self: flex-end; }
@@ -612,7 +611,7 @@ footer a:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; 
   transition: color var(--transition);
 }
 .accordion-btn:hover { color: var(--red); }
-.accordion-btn::after { content: '+'; font-size: 1.2rem; color: var(--orange); flex-shrink: 0; margin-left: .5rem; }
+.accordion-btn::after { content: '+'; font-size: 1.2rem; color: var(--orange-text); flex-shrink: 0; margin-left: .5rem; }
 .accordion-btn[aria-expanded="true"]::after { content: '−'; }
 .accordion-btn:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
 .accordion-panel {
@@ -635,7 +634,7 @@ footer a:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; 
   margin: 3rem auto;
 }
 .confirm-icon { font-size: 3.2rem; margin-bottom: .85rem; }
-.confirm-card h1 { font-family: var(--font-display); color: var(--red); font-size: 1.75rem; margin-bottom: .55rem; }
+.confirm-card h2 { font-family: var(--font-display); color: var(--red); font-size: 1.75rem; margin-bottom: .55rem; }
 .confirm-card > p { color: var(--brown); margin-bottom: 1.25rem; font-size: .93rem; }
 
 .data-table { width: 100%; border-collapse: collapse; font-size: .88rem; text-align: left; margin: 1.25rem 0 1.5rem; }
