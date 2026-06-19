@@ -55,9 +55,14 @@ export function renderCards(foods, container) {
 }
 
 // ── Modal ──────────────────────────────────────────────────────
+let lastFocusedElement = null;
+
 export function openModal(food) {
   const backdrop = document.getElementById('modal-backdrop');
   if (!backdrop) return;
+
+  // Remember what triggered the modal so we can restore focus on close
+  lastFocusedElement = document.activeElement;
 
   const tagsHtml = food.tags.map(t => `<span class="tag">${t}</span>`).join('');
   const dots = Array.from({ length: 5 }, (_, d) =>
@@ -99,6 +104,12 @@ export function openModal(food) {
     </div>`;
 
   backdrop.classList.add('open');
+
+  // Hide the rest of the page from assistive tech while modal is open
+  document.querySelectorAll('body > *').forEach(el => {
+    if (el !== backdrop && el.id !== 'toast') el.setAttribute('aria-hidden', 'true');
+  });
+
   backdrop.querySelector('.modal-close').focus();
 
   backdrop.querySelector('#modal-save-btn').addEventListener('click', () => {
@@ -107,11 +118,43 @@ export function openModal(food) {
   backdrop.querySelectorAll('.modal-close, .modal-close-btn').forEach(btn =>
     btn.addEventListener('click', closeModal)
   );
+
+  // Trap Tab focus inside the modal while open
+  backdrop.addEventListener('keydown', trapTabKey);
+}
+
+function trapTabKey(e) {
+  if (e.key !== 'Tab') return;
+  const backdrop = document.getElementById('modal-backdrop');
+  const focusable = backdrop.querySelectorAll(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  );
+  if (!focusable.length) return;
+  const first = focusable[0];
+  const last  = focusable[focusable.length - 1];
+
+  if (e.shiftKey && document.activeElement === first) {
+    e.preventDefault();
+    last.focus();
+  } else if (!e.shiftKey && document.activeElement === last) {
+    e.preventDefault();
+    first.focus();
+  }
 }
 
 export function closeModal() {
   const backdrop = document.getElementById('modal-backdrop');
-  if (backdrop) backdrop.classList.remove('open');
+  if (!backdrop) return;
+  backdrop.classList.remove('open');
+  backdrop.removeEventListener('keydown', trapTabKey);
+
+  // Restore visibility of the rest of the page
+  document.querySelectorAll('body > *').forEach(el => el.removeAttribute('aria-hidden'));
+
+  // Return focus to whatever opened the modal
+  if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+    lastFocusedElement.focus();
+  }
 }
 
 // Close on backdrop click or ESC
